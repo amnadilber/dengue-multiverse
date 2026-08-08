@@ -7,11 +7,12 @@ Written 2026-08-03. Copy these fields straight into the submission form at
 
 ## Before you start
 
-- [x] Manuscript PDF — `paper/paper.pdf` (29 pages)
+- [x] Manuscript PDF — `paper/paper.pdf` (25 pages)
+- [x] Supplement PDF — `paper/supplementary.pdf` (6 pages, S1–S6)
 - [x] Repository public — <https://github.com/amnadilber/dengue-multiverse>
 - [x] Repository URL in the manuscript's data-availability statement
 - [x] AI disclosure section in the manuscript
-- [ ] Zenodo DOI (see below — do this **before** submitting so the paper can cite it)
+- [x] Zenodo DOI — 10.5281/zenodo.21854302, in the manuscript, CITATION.cff and README
 
 ---
 
@@ -76,10 +77,10 @@ ethical approval or consent was required.
 
 ```
 All analysis code, result tables and figures are available at
-https://github.com/amnadilber/dengue-multiverse and archived at [Zenodo DOI].
-Raw data are not redistributed; download scripts record source URLs and
-checksums. Case data are from OpenDengue v1.3 (CC BY 4.0); climate data from
-NASA POWER (public domain).
+https://github.com/amnadilber/dengue-multiverse and archived at
+https://doi.org/10.5281/zenodo.21854302. Raw data are not redistributed;
+download scripts record source URLs and checksums. Case data are from
+OpenDengue v1.3 (CC BY 4.0); climate data from NASA POWER (public domain).
 ```
 
 **Clinical trial?** No.
