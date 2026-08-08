@@ -39,7 +39,7 @@ analyst? A multiverse analysis of 221 outbreaks in 33 countries
 | Email | amnadilber.bi@gmail.com |
 | Institution | Independent researcher |
 | Corresponding author | Yes |
-| ORCID | *register free at orcid.org — takes 3 minutes, and journals increasingly require it* |
+| ORCID | `0009-0008-5684-4516` |
 
 > "Independent researcher" is accepted. medRxiv does not require an institutional address,
 > and it does not verify affiliation. Do not invent one.
