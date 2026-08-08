@@ -30,6 +30,7 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = ROOT / "paper" / "paper.tex"
+SUPPLEMENT = ROOT / "paper" / "supplementary.tex"
 README = ROOT / "README.md"
 
 cfg = load_config()
@@ -52,6 +53,13 @@ def _robustness() -> pd.DataFrame:
         pytest.skip("no global robustness table present")
 
 
+def _text_of(path: Path) -> str:
+    """One file only, without the supplement concatenation."""
+    if not path.exists():
+        pytest.skip(f"{path.name} not present")
+    return path.read_text(encoding="utf-8")
+
+
 def _table(name: str) -> pd.DataFrame:
     path = TABLES / name
     if not path.exists():
@@ -60,6 +68,21 @@ def _table(name: str) -> pd.DataFrame:
 
 
 def _text(path: Path) -> str:
+    """The text of one document.
+
+    For PAPER this returns the main text *and* the supplement concatenated,
+    because they are one manuscript. When the paper was shortened, six blocks
+    moved verbatim into `supplementary.tex`; a test that kept reading only
+    `paper.tex` would then have failed on numbers that had not changed at all,
+    and — worse — would have stopped guarding them once someone "fixed" it by
+    deleting the assertion.
+    """
+    if path == PAPER:
+        parts = [q.read_text(encoding="utf-8") for q in (PAPER, SUPPLEMENT)
+                 if q.exists()]
+        if not parts:
+            pytest.skip("manuscript not present")
+        return "\n".join(parts)
     if not path.exists():
         pytest.skip(f"{path.name} not present")
     return path.read_text(encoding="utf-8")
@@ -381,8 +404,57 @@ def test_no_prose_placeholders_remain():
     assert not prose, f"unfilled placeholders: {prose}"
 
 
+def test_the_supplement_exists_and_is_referenced():
+    """The main text points at S1-S6; those sections must exist."""
+    main = PAPER.read_text(encoding="utf-8")
+    if "Supplementary Section" not in main:
+        pytest.skip("manuscript has not been split")
+    supp = _text_of(SUPPLEMENT)
+    import re
+    wanted = set(re.findall(r"Supplementary Section~S(\\d)", main))
+    have = len(re.findall(r"\\\\section\\{", supp))
+    assert have >= len(wanted), (
+        f"main text cites S{sorted(wanted)} but the supplement has "
+        f"{have} sections")
+
+
 def test_the_repository_is_named_and_reachable_in_the_paper():
     """The data-availability statement must point somewhere real."""
     text = _text(PAPER)
     assert "github.com/amnadilber/dengue-multiverse" in text, (
         "the paper does not give the repository URL")
+
+
+def test_no_escape_corruption_in_the_latex_sources():
+    r"""A mangled backslash is invisible until it reaches the PDF.
+
+    A patch applied through a shell heredoc turned `\ref{sec:decomposition}`
+    into a newline followed by `ef{sec:decomposition}`: the Python string
+    escape `\r` was interpreted before it ever reached the file. LaTeX then
+    compiled without error and printed the literal text `ef{sec:decomposition}`
+    in the middle of a sentence. Nothing else in this suite could see it, and
+    it survived four review passes.
+
+    The signature is a control character where a command should be, or a bare
+    command fragment with its backslash missing.
+    """
+    fragments = ("ef{", "extbf{", "extit{", "ibitem{", "rac{", "ewcommand")
+    control = {"\r": r"\r", "\t": r"\t", "\x08": r"\b",
+               "\x0c": r"\f", "\x07": r"\a", "\v": r"\v"}
+    problems = []
+    for path in (PAPER, SUPPLEMENT, ROOT / "paper" / "author_summary.tex"):
+        if not path.exists():
+            continue
+        raw = path.read_bytes().decode("utf-8").replace("\r\n", "\n")
+        for ch, name in control.items():
+            if ch in raw:
+                line = raw[:raw.index(ch)].count("\n") + 1
+                problems.append(f"{path.name}:{line} contains {name}")
+        for frag in fragments:
+            for i, part in enumerate(raw.split(frag)[:-1]):
+                if part and (part[-1].isalpha() or part[-1] == "\\"):
+                    continue        # a real command, e.g. \ref{ or \textbf{
+                line = raw[:sum(len(p) + len(frag)
+                                for p in raw.split(frag)[:i + 1])].count("\n") + 1
+                problems.append(f"{path.name}:{line} bare fragment {frag!r}")
+    assert not problems, "escape corruption: " + "; ".join(problems)

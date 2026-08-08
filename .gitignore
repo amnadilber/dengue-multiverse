@@ -48,3 +48,6 @@ CLAUDE.md
 .cursor/
 .aider*
 .github/copilot*
+
+# Stray LaTeX output from a failed run at the repository root.
+texput.log
