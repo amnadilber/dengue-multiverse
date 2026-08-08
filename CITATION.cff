@@ -5,8 +5,8 @@ title: >-
   countries
 message: >-
   If you use this software or its results, please cite it using the
-  metadata below. Update the DOI and preprint fields once a release
-  has been archived on Zenodo and the preprint is posted.
+  metadata below. The preprint field will be added once the manuscript
+  is posted to medRxiv.
 type: software
 authors:
   - given-names: Amna
@@ -14,6 +14,8 @@ authors:
     email: amnadilber.bi@gmail.com
     affiliation: Independent researcher
 repository-code: "https://github.com/amnadilber/dengue-multiverse"
+doi: 10.5281/zenodo.21854302
+version: v1.0.0
 abstract: >-
   A multiverse analysis of climate-attribution inference in mechanistic
   dengue transmission models. Every usable outbreak in a global

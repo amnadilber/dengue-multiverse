@@ -1,5 +1,10 @@
 # How much of the evidence for climate-driven dengue transmission survives the analyst?
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21854302.svg)](https://doi.org/10.5281/zenodo.21854302)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-268%20passing-brightgreen.svg)](tests/)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](requirements.txt)
+
 A multiverse analysis across **221 dengue outbreaks in 33 countries**. Each outbreak is
 fitted under every combination of six routine analysis choices — 144 of them, 33,152 fits —
 and the question asked is not whether climate forcing wins but how often the answer
@@ -597,9 +602,14 @@ Code: MIT (see `LICENSE`). Data retains the licence of its original source.
 
 ## Citing this
 
-If you use the code or its results, cite the software via `CITATION.cff`. A preprint and a
-Zenodo release DOI will be linked here once posted; until then, cite the repository and the
-commit.
+If you use the code or its results, cite the archived release:
+
+> Dilber, A. (2026). *How much of the evidence for climate-driven dengue transmission
+> survives the analyst? A multiverse analysis of 221 outbreaks in 33 countries* (v1.0.0)
+> [Software]. Zenodo. https://doi.org/10.5281/zenodo.21854302
+
+Machine-readable metadata is in `CITATION.cff`. A preprint DOI will be added here once the
+manuscript is posted to medRxiv.
 
 ## Author
 
