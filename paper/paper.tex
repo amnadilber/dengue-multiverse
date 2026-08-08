@@ -13,6 +13,8 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage[hidelinks]{hyperref}
+% Let long URLs break across lines; the repository URL overflows otherwise.
+\usepackage{xurl}
 
 \graphicspath{{../results/figures/}}
 
@@ -25,7 +27,7 @@ transmission survives the analyst?\\
 \small \texttt{amnadilber.bi@gmail.com}\\
 \small ORCID: \href{https://orcid.org/0009-0008-5684-4516}{0009-0008-5684-4516}}
 
-\date{Draft --- \today}
+\date{Draft, \today}
 
 \begin{document}
 \maketitle
@@ -51,7 +53,8 @@ interaction share rising from 23\% to 69\%.
 
 The intervals do not keep their promise. A nominal 95\% interval contains the
 true transmission coefficient \textbf{78\%} of the time and the true rainfall
-coefficient \textbf{71\%} --- \textbf{42\%} when the epidemic is a sum of two
+coefficient \textbf{71\%}, falling to \textbf{42\%} when the epidemic is a
+sum of two
 asynchronous ones, as these data demonstrably are. Combining \textbf{eight}
 analyses by Rubin's rules restores nominal coverage at 1.5--2.2 times the width,
 reaching 90\% rather than 95\% under structural mis-specification.
@@ -75,7 +78,7 @@ and without climate covariates and compare them by an information criterion.
 Such an analysis requires decisions that the model itself does not determine. A
 distribution must be chosen for the observation error. A functional form must be
 chosen for the temperature response. Rainfall must be lagged by some number of
-weeks --- a lag with a mechanistic basis and no agreed value, since both drought
+weeks: a lag with a mechanistic basis and no agreed value, since both drought
 and extreme rainfall raise dengue risk at different delays~\cite{lowe2021}. Some portion of the series must be set aside for validation, or none. None
 of these is a hypothesis about dengue; each is a convention, and published papers
 rarely state why one was preferred over another.
@@ -87,7 +90,7 @@ problem. What has not been quantified is its consequence: how often the reported
 conclusion would have differed had the analyst chosen otherwise.
 
 We measure this directly. Every usable dengue outbreak in a global surveillance
-compilation --- 221 of them, in 33 countries --- is fitted under a full factorial
+compilation (221 of them, in 33 countries) is fitted under a full factorial
 of six such choices, 144 combinations and 33{,}152 fits, so that no analytical
 choice varies with the setting because none varies at all. Four things follow.
 
@@ -97,7 +100,7 @@ choice varies with the setting because none varies at all. Four things follow.
       climate-driven lies between analyses of the same outbreak rather than
       between outbreaks (Section~\ref{sec:decomposition}). Everything that differs
       between epidemics competes for the remaining quarter, which bounds what any
-      contextual explanation can achieve --- and the specific contextual
+      contextual explanation can achieve, and the specific contextual
       explanation on offer does not reproduce here. Partitioning three ways, the
       largest term is an outbreak-by-analysis interaction at 61\%, four times the
       main effect of the analysis: the disagreement is not a ranking of methods
@@ -109,13 +112,13 @@ choice varies with the setting because none varies at all. Four things follow.
       (Section~\ref{sec:r0}).
 \item \textbf{The intervals do not keep their promise.} A nominal 95\% interval
       contains the true transmission coefficient 78\% of the time, and the true
-      rainfall coefficient 71\% --- 42\% when the epidemic is a sum of two
+      rainfall coefficient 71\%, falling to 42\% when the epidemic is a sum of two
       asynchronous ones, which these data demonstrably are
       (Section~\ref{sec:coverage}).
 \item \textbf{An interval that does keep it, validated against a known truth and
       cheap enough to use.} Combining the analyses by Rubin's rules restores
       nominal coverage at 1.5 to 2.2 times the width, and \textbf{eight analyses
-      are enough} --- four already reach nominal. It is an improvement rather than
+      are enough}: four already reach nominal. It is an improvement rather than
       a cure: under structural mis-specification it falls to 90\%, and we report
       that rather than the headline alone.
 \end{enumerate}
@@ -128,7 +131,7 @@ is a multiverse analysis in the sense of Steegen et al.~\cite{steegen} and a
 specification curve in the sense of Simonsohn et al.~\cite{simonsohn}: enumerate
 the defensible analyses rather than report one, and treat the spread of results
 as the quantity of interest. The complementary design hands one dataset to many
-analysts and observes what they do with it --- 29 teams reaching effect sizes
+analysts and observes what they do with it: 29 teams reaching effect sizes
 from 0.89 to 2.93 on one question~\cite{silberzahn}, and 70 teams producing
 sizeable variation in hypothesis tests from one neuroimaging
 dataset~\cite{narps}. Both literatures have reached epidemiology: a
@@ -138,13 +141,12 @@ models, where the forking paths are covariate sets, exclusion rules and outcome
 codings. Mechanistic transmission models fork differently. The choices here are
 the observation distribution, the functional form of a biological response, a
 lag with a mechanistic justification but no agreed value, the compartmental
-structure, and the values at which the epidemiological parameters are fixed ---
-none of which has an analogue in a covariate list, and each of which is normally
+structure, and the values at which the epidemiological parameters are fixed, none of which has an analogue in a covariate list, and each of which is normally
 presented as part of the model rather than as an analytical degree of freedom. Two consequences follow that a regression multiverse does not
 face: the analyses can fail to converge, so the multiverse is not guaranteed to
 be complete; and the comparison is between nested mechanistic hypotheses judged
-by an information criterion, which makes the decision rule itself --- where the
-threshold sits, and whether it abstains --- a lever we can test rather than
+by an information criterion, which makes the decision rule itself (where the
+threshold sits, and whether it abstains) a lever we can test rather than
 assume. To our knowledge this framework has not previously been applied to
 mechanistic epidemic models.
 
@@ -166,7 +168,7 @@ Weekly reported dengue case counts were taken from OpenDengue
 v1.3~\cite{opendengue}, a curated compilation of publicly available surveillance
 data covering 88 countries in its weekly-resolution subset (2{,}248{,}637
 records). Daily temperature and precipitation were taken from NASA POWER at one
-representative location per reporting unit --- the capital or largest city for a
+representative location per reporting unit: the capital or largest city for a
 national series, the administrative seat for a subnational one.
 
 A window is usable only if it can carry a single-epidemic fit. Each reporting
@@ -181,7 +183,7 @@ The peak-prominence threshold is itself a choice, and Supplementary Section~S5
 reports the headline result across a range of values rather than only the one
 applied. The procedure yields \textbf{237 windows from 34 countries}, median 38
 weeks and 4{,}318 cases: 125 national and 112 subnational. Four Brazilian windows
-could not be fitted under any configuration --- every multi-start diverged --- and
+could not be fitted under any configuration (every multi-start diverged), and
 twelve further windows completed only part of the factorial. Both groups are
 excluded, leaving \textbf{221 outbreaks in 33 countries} and 33{,}152 fits. A
 window finishing part of the design would appear stable or unstable depending on
@@ -204,11 +206,12 @@ fractions of their own population,
 
 \begin{align*}
 \dot S_h &= -\beta(t)\, m\, I_v S_h,
-&\dot S_v &= \mu_v (1 - S_v) - \beta(t)\, I_h S_v,\
+&\dot S_v &= \mu_v (1 - S_v) - \beta(t)\, I_h S_v,\\
 \dot E_h &= \beta(t)\, m\, I_v S_h - \sigma_h E_h,
-&\dot I_v &= \beta(t)\, I_h S_v - \mu_v I_v,\
-\dot I_h &= \sigma_h E_h - \gamma_h I_h, &&\
-\dot R_h &= \gamma_h I_h, &\dot C &= \sigma_h E_h,
+&\dot I_v &= \beta(t)\, I_h S_v - \mu_v I_v,\\
+\dot I_h &= \sigma_h E_h - \gamma_h I_h,
+&\dot R_h &= \gamma_h I_h,\\
+\dot C &= \sigma_h E_h. &&
 \end{align*}
 
 where $m$ is the vector-to-host ratio, $\mu_v$ the mosquito mortality rate,
@@ -252,17 +255,17 @@ converted to counts, and the reporting fraction $\rho$ and the population at ris
 $N$ appear solely as the product $\rho N$. No data can separate them; we verified
 numerically that halving $N$ while doubling $\rho$ changes every predicted week by
 exactly zero. We therefore fix $\rho$ from the under-ascertainment
-literature --- cartographic estimates put global dengue infections at about three
-times the apparent cases and four times the WHO figure~\cite{bhatt} --- and
+literature (cartographic estimates put global dengue infections at about three
+times the apparent cases and four times the WHO figure~\cite{bhatt}), and
 estimate the population at risk. Varying $\rho$ over a tenfold range rescales that
 estimate as $1/\rho$ and leaves $R_0$ unchanged to four decimal places, so no
 conclusion here depends on it.
 
 \paragraph{Estimation.} The system is integrated with fixed-step classical
 Runge--Kutta at one day, whose adequacy under climate forcing is verified against
-an eightfold finer step. Five parameters are estimated --- $\beta_0$,
+an eightfold finer step. Five parameters are estimated ($\beta_0$,
 $a_{\mathrm{temp}}$, $a_{\mathrm{rain}}$, the fraction of the population at risk
-and the initial infected fraction --- by maximum likelihood, expressed as
+and the initial infected fraction) by maximum likelihood, expressed as
 least squares on signed square roots of the per-observation deviance so that a
 Levenberg--Marquardt routine performs Poisson or negative-binomial estimation
 according to which residual is supplied. Optimisation runs in an unconstrained
@@ -279,16 +282,16 @@ are the ones a paper of this kind reports.
 \paragraph{The factorial.} Each window is fitted under all combinations of:
 
 \begin{itemize}
-\item \textbf{observation model} --- Poisson, or negative binomial with the
+\item \textbf{observation model}: Poisson, or negative binomial with the
       dispersion profiled;
-\item \textbf{temperature term} --- a unimodal Brière response with thermal limits
+\item \textbf{temperature term}: a unimodal Brière response with thermal limits
       fixed from \emph{Aedes aegypti} trait data~\cite{mordecai,mordecai2019},
       raised to an estimated exponent; or a free log-linear coefficient on standardised temperature,
       the conventional choice;
-\item \textbf{rainfall lag} --- 3, 5 or 7 weeks;
-\item \textbf{fraction of the series fitted} --- 100\%, or the first 75\% with the
+\item \textbf{rainfall lag}: 3, 5 or 7 weeks;
+\item \textbf{fraction of the series fitted}: 100\%, or the first 75\% with the
       remainder held out;
-\item \textbf{model structure} --- three formulations. The host--vector model
+\item \textbf{model structure}: three formulations. The host--vector model
       above; a directly transmitted human-only SEIR, which is what a large part
       of the applied literature fits to case counts; and the host--vector model
       with adult mosquito mortality following temperature. The third exists
@@ -299,7 +302,7 @@ are the ones a paper of this kind reports.
       limits are fixed from vector biology and it estimates no additional
       parameter, so the factor remains a comparison between mechanisms rather
       than between one model given more freedom than another;
-\item \textbf{fixed epidemiological parameters} --- two sets, both drawn from
+\item \textbf{fixed epidemiological parameters}: two sets, both drawn from
       published ranges: human viraemia 4 or 5 days, intrinsic incubation 5 or 6
       days, mosquito lifespan 10 or 14 days, vector-to-host ratio 2 or 3. Every
       mechanistic model fixes these from the literature, every published range is
@@ -320,8 +323,8 @@ than another.
 enters \emph{both} compared models, since it drives mosquito mortality in the
 structure itself. Its constant model is not climate-free: it is ``climate affects
 mosquito survival but not the transmission coefficient''. The comparison is the
-same in all three --- does letting the transmission coefficient depend on climate
-improve the fit, holding the mechanism fixed --- but the baseline is richer in the
+same in all three (does letting the transmission coefficient depend on climate
+improve the fit, holding the mechanism fixed), but the baseline is richer in the
 third, which makes it the hardest of the three tests rather than an unfair one.
 We state this because a structure whose null is not the same null would otherwise
 read as a like-for-like comparison.
@@ -345,7 +348,7 @@ forcing on data containing none. Mechanistic fits, which the review does not
 cover, commonly go further and use ordinary least squares.
 
 The same review reports that \textbf{20.2\% of models present no validation at
-all}, 75.8\% internal validation only and 5.2\% external --- so how much of a
+all}, 75.8\% internal validation only and 5.2\% external, so how much of a
 series to fit is not a settled convention either.
 
 For the remaining four factors the evidence is the specifications themselves:
@@ -392,16 +395,16 @@ Five factors & 48 & 20.3\% & 79.7\% \\
 \end{table}
 
 \textbf{Roughly three-quarters of the variation is between analyses of the same
-outbreak.} Everything that differs between epidemics --- climate, population
-density, wealth, serotype composition, health system, surveillance intensity ---
+outbreak.} Everything that differs between epidemics (climate, population
+density, wealth, serotype composition, health system, surveillance intensity)
 competes for the remaining quarter, and that quarter is an upper bound on what
 any moderator analysis can hope to explain. The split moves by three points
 across designs of 24, 48 and 144 analyses, so it is not an artefact of how finely
 the space was enumerated.
 
 Bootstrapping over outbreaks gives a 95\% interval of 73.1--79.9\%. The outbreaks
-are not independent --- 221 of them come from 85 reporting units in 33 countries,
-and three countries supply 45\% of the sample --- so the interval was recomputed
+are not independent (221 of them come from 85 reporting units in 33 countries,
+and three countries supply 45\% of the sample), so the interval was recomputed
 resampling whole countries rather than outbreaks. It widens to 72.6--81.1\% and
 the point estimate does not move.
 
@@ -409,8 +412,8 @@ the point estimate does not move.
 which is a property of where weekly dengue surveillance is published rather than a
 choice we made, and it has to be checked rather than excused. Removing each
 well-represented country in turn moves the share between 76.0\% and 78.6\%.
-Removing all three dominant countries at once --- Bolivia, Nicaragua and Mexico,
-leaving 121 outbreaks --- gives \textbf{78.5\%}. Splitting by reporting level gives
+Removing all three dominant countries at once (Bolivia, Nicaragua and Mexico,
+leaving 121 outbreaks) gives \textbf{78.5\%}. Splitting by reporting level gives
 79.1\% for national series and 75.4\% for subnational. Every subset we can form
 lands within three points of the whole.
 
@@ -419,8 +422,8 @@ Recomputing it dropping each factor in turn, and over all 63 non-empty subsets
 of the six (Supplementary Section~S1), gives the honest bound: removing any
 factor except the observation model costs at most six points, removing the
 observation model costs twenty-one and leaves \textbf{55.2\%}, and the most
-favourable choice a sceptic could make --- keeping only the fixed epidemiological
-parameters --- leaves \textbf{2.3\%}. A reader who regards the observation model
+favourable choice a sceptic could make (keeping only the fixed epidemiological
+parameters) leaves \textbf{2.3\%}. A reader who regards the observation model
 as fixed by good practice should read 55\%. We think it is not fixed by practice,
 because practice has not fixed it, as the review figures in Section~3 show.
 
@@ -455,8 +458,8 @@ Five factors, 48 analyses & 20.3\% & 21.2\% & 58.5\% \\
 \textbf{The largest term is the one that belongs to neither.} Three-fifths of the
 variation in whether an outbreak is judged climate-driven is specific to the
 pairing of a method with an epidemic: not a ranking of methods, not a property of
-places. It is the most stable of the three across designs --- 58.7\%, 58.5\% and
-60.6\% on 24, 48 and 144 analyses --- and removing each dominant country in turn
+places. It is the most stable of the three across designs (58.7\%, 58.5\% and
+60.6\% on 24, 48 and 144 analyses), and removing each dominant country in turn
 moves it between 59.7\% and 62.1\%.
 
 An interaction estimated with one observation per cell cannot be separated from
@@ -479,8 +482,8 @@ applied to two different outbreaks 32.7\%, and two findings sharing neither
 standardising the place removes 9. An earlier version of this paper claimed that
 a conflicting pair of published findings is more likely to differ because the
 analysts differed than because the places did. We withdraw it. The one-way split
-does not license it --- a variance of means and a mean of variances are not
-comparable in that direction --- and measured directly it is if anything the
+does not license it (a variance of means and a mean of variances are not
+comparable in that direction), and measured directly it is if anything the
 wrong way round.
 
 \paragraph{Is the interaction predictable, or only unexplained?} An interaction
@@ -500,14 +503,14 @@ enters no cell of the factorial.
 Poisson correlates with log dispersion at $\rho = +0.31$
 ($p = 2\times10^{-6}$): below the median it raises the endorsement rate by
 \textbf{0.25} and above it by \textbf{0.42}. The interaction is not arbitrary
-where a mechanism exists --- it is largest exactly where the assumption it rests
+where a mechanism exists: it is largest exactly where the assumption it rests
 on is most violated. That is independent corroboration of the mechanism in
 Section~\ref{sec:mechanism} from a measure that touches none of the same
 arithmetic.
 
 \textbf{And it stops there.} Regressing each factor's outbreak-specific effect on
-four things an analyst can see before fitting --- dispersion, total cases, series
-length and mean weekly count --- explains 34\% of the variation for the
+four things an analyst can see before fitting (dispersion, total cases, series
+length and mean weekly count) explains 34\% of the variation for the
 observation model and a median of \textbf{1.8\%} for the other five. Of 24
 correlations, 5 reach $p<0.05$ and 3 survive control of the false-discovery rate,
 all of them for the two factors that have a mechanism.
@@ -539,7 +542,7 @@ trying the others.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=\textwidth]{20_interaction_structure.png}
-\caption{Left: the one prediction made in advance --- the effect of assuming
+\caption{Left: the one prediction made in advance: the effect of assuming
 Poisson counts against the model-free index of dispersion. Right: how much of
 each factor's outbreak-to-outbreak variation four pre-fit descriptors account
 for. Only the factor with a mechanism behind it is predictable, and only in part.}
@@ -553,12 +556,12 @@ epidemic. That term is invisible to both of the standard remedies. It is the
 reason the recommendation this paper ends on is an interval computed within each
 outbreak rather than a house style.
 
-The specific contextual explanation on offer --- that the association is
-strongest where temperature varies most~\cite{kirk2024} --- does not reproduce on
+The specific contextual explanation on offer (that the association is
+strongest where temperature varies most~\cite{kirk2024}) does not reproduce on
 these data. Of eighteen correlations between six descriptions of each outbreak's
 temperature regime and three outcomes, seven reach $p<0.05$ against about one
 expected, but no $|\rho|$ exceeds 0.22 and \textbf{one} survives control of the
-false-discovery rate --- with the sign the wrong way round for the hypothesis.
+false-discovery rate: with the sign the wrong way round for the hypothesis.
 Supplementary Section~S2 reports all eighteen.
 
 \subsection{What this does to the number the field reports}
@@ -590,7 +593,7 @@ Restricted to $R_0 \le 10$ & 72.8\% & 27.2\% & 21.1\% & 81.4\% \\
 
 \textbf{The constant model's $R_0$ is mostly about the epidemic; the climate
 model's is mostly about the analyst.} Under the constant model roughly 72\% of the
-variation in estimated $R_0$ lies between outbreaks --- the estimate is measuring
+variation in estimated $R_0$ lies between outbreaks: the estimate is measuring
 something that differs between epidemics, which is what it is for. Under the
 climate model that falls to between 2\% and 21\% depending on how the long right
 tail is handled, and the analytical share rises to 80--98\%. The contrast survives
@@ -608,7 +611,7 @@ fix this?
 \begin{table}[htbp]
 \centering
 \caption{Variation in estimated $R_0$, partitioned into what a convention could
-reach (the analysis) and what it could not (the interaction). On the log scale,
+reach (the analysis), and what it could not (the interaction). On the log scale,
 which handles the long right tail; the raw scale is more extreme in the same
 direction (0.5\% analysis, 97.4\% interaction under the climate model). The
 climate-model row uses the 219 outbreaks whose $R_0$ is positive and finite under
@@ -625,7 +628,7 @@ $R_0$, climate model & 22.5\% & \textbf{8.4\%} & \textbf{69.1\%} \\
 \end{table}
 
 \textbf{No convention would fix it.} The analysis main effect for $R_0$ is about a
-twentieth under either model --- there is no systematically high-reading method to
+twentieth under either model, there is no systematically high-reading method to
 stop using. What adding climate terms does is move variation out of the outbreak
 and into the \emph{interaction}, which rises from 23\% to 69\%. The instability in
 the number this field reports is not a house style anyone could adopt their way
@@ -723,18 +726,17 @@ Host--vector $\to$ thermal mortality & 9.4\% & $0.738 \to 0.741$ \\
 \end{table}
 
 The factors fall into three groups, and the ordering is the result. The
-\emph{statistical conventions} --- which likelihood, how much of the series to
-fit --- flip 21\% and 34\% of verdicts. The \emph{covariate handling} follows at
-11--16\%. The \emph{epidemiological content} --- which transmission mechanism, and
-what the biological parameters are --- comes last at 3--10\%. On this evidence the
+\emph{statistical conventions} (which likelihood, how much of the series to
+fit) flip 21\% and 34\% of verdicts. The \emph{covariate handling} follows at
+11--16\%. The \emph{epidemiological content} (which transmission mechanism, and
+what the biological parameters are) comes last at 3--10\%. On this evidence the
 question is answered by the statistics rather than by the biology.
 
 The two factors added specifically to answer the objection that the study was
 testing a toy model are among the weakest. Replacing the host--vector formulation
 with a directly transmitted SEIR flips 9.9\%; replacing it with a host--vector
 model whose mosquito mortality follows temperature flips 9.4\%. Moving the fixed
-epidemiological parameters --- lifespan, incubation periods, vector-to-host ratio
---- to the other end of their published ranges flips \textbf{3.1\%} and moves the
+epidemiological parameters (lifespan, incubation periods, vector-to-host ratio) to the other end of their published ranges flips \textbf{3.1\%} and moves the
 endorsement probability by 0.001. We expected that factor to matter and it does
 not.
 
@@ -749,7 +751,7 @@ weeks, and the climate covariates supply the flexibility to do it. If so their
 coefficients should be pushed harder under Poisson. \textbf{They are not.} Paired
 within outbreak and within every other choice, the median $|a_{\mathrm{temp}}|$ is
 0.092 under a negative binomial and 0.097 under Poisson, and is larger under
-Poisson in 40\% of 15{,}912 pairs --- less often than chance. For
+Poisson in 40\% of 15{,}912 pairs: less often than chance. For
 $|a_{\mathrm{rain}}|$ it is 46\%. The climate model does the same thing under both
 likelihoods.
 
@@ -769,7 +771,7 @@ The dispersion it ignores is real, and is expected: infectious disease counts
 are overdispersed by individual variation in transmission~\cite{lloydsmith}, and
 the standard remedies for it in count regression are long
 established~\cite{mccullagh}. Taking residuals about a five-week moving
-average --- a measure independent of any transmission model --- these series have
+average (a measure independent of any transmission model) these series have
 a median index of dispersion of \textbf{5.7}, quartiles 2.6 and 19.1, and a
 quarter above 20. A week of 2{,}000 cases that Poisson treats as accurate to
 $\pm 45$ is accurate to about $\pm 107$.
@@ -777,13 +779,13 @@ $\pm 45$ is accurate to about $\pm 107$.
 A reader may object that Poisson is not a defensible choice at all on
 overdispersed counts, and that including it inflates the instability by admitting
 a cell that should never have been in the multiverse. Two things answer this. The
-field uses it, in the proportion given in Section~3 --- a large minority rather
+field uses it, in the proportion given in Section~3: a large minority rather
 than a majority, which is the honest reading and still enough that a multiverse
 excluding it would not describe the literature it is about. Where the two are
 compared head to head on mosquito-borne outbreak data the negative binomial is
 the better model~\cite{nbcompare}. And the result does not depend on
-it. Restricting the entire study to negative-binomial fits --- discarding half the
-factorial as indefensible --- still leaves \textbf{79.6\%} of outbreaks changing
+it. Restricting the entire study to negative-binomial fits (discarding half the
+factorial as indefensible) still leaves \textbf{79.6\%} of outbreaks changing
 verdict (95\% CI 75--85), because the remaining five choices continue to move it.
 The observation model is the largest lever, not the only one.
 
@@ -795,7 +797,7 @@ conclusion by an arbitrary choice, without any systematic effect to justify it.
 \centering
 \includegraphics[width=\textwidth]{12_global_robustness.png}
 \caption{The four results of the factorial. Top left: how many of the 144
-analyses favour climate forcing, per outbreak --- the mass sits well short of
+analyses favour climate forcing, per outbreak: the mass sits well short of
 unanimity at either end. Top right: the share of paired comparisons each choice
 flips, which separates the statistical conventions from the epidemiological
 content. Bottom left: the estimated temperature coefficient by parameterisation,
@@ -812,7 +814,7 @@ Figure~\ref{fig:speccurve} shows the multiverse directly, in the two forms the
 question takes.
 
 \textbf{Within one outbreak.} The left panel draws the most evenly split window in
-the study --- Jamaica, July 2023 --- where exactly 72 of the 144 specifications
+the study (Jamaica, July 2023) where exactly 72 of the 144 specifications
 favour climate forcing and 72 favour the constant model. The $\Delta$AIC values
 run from $-337$ to $+4$. One analyst, following defensible
 conventions, would report overwhelming evidence for climate-driven transmission
@@ -824,8 +826,8 @@ on the climate side and every negative binomial on the other.
 \textbf{Across outbreaks.} The right panel gives each specification the whole
 study and asks how often it endorses climate forcing. If the choices were
 interchangeable the result would be a flat line. The most credulous specification
---- Poisson counts, a log-linear temperature term, a three-week rainfall lag, the
-first 75\% of the series, an SEIR structure and the central parameter set ---
+ (Poisson counts, a log-linear temperature term, a three-week rainfall lag, the
+first 75\% of the series, an SEIR structure and the central parameter set)
 endorses climate forcing in \textbf{95.9\%} of outbreaks. The least credulous
 differs from it in exactly two of the six, the observation model and the
 temperature form: negative binomial and Brière, with the same lag, the same
@@ -870,8 +872,8 @@ Out-of-sample (held-out deviance) & 90.6\% & 36.3\% of fits \\
 \end{tabular}
 \end{table}
 
-Validation halves the rate at which climate forcing is endorsed --- a large and
-useful reduction in false positives --- but leaves the verdict at least as
+Validation halves the rate at which climate forcing is endorsed (a large and
+useful reduction in false positives), but leaves the verdict at least as
 dependent on the remaining choices: 90.6\% of outbreaks are unstable
 out-of-sample against 84.7\% in-sample. It is a corrective, not a solution.
 Earlier versions of this study, on smaller designs, found the two rates equal;
@@ -903,7 +905,7 @@ $\rho = +0.25$ ($p = 1\times10^{-4}$): where temperature falls during growth the
 coefficient is negative in 52\% of outbreaks, where it rises, in 32\%.
 
 So the direction is as claimed and the size is not. The calendar tilts the sign
-without setting it, which leaves most of the sign unexplained --- and a
+without setting it, which leaves most of the sign unexplained, and a
 coefficient whose sign is half calendar and half unaccounted for is not a
 measurement of anything. A unimodal response cannot produce a negative value at
 all, because it has no direction to choose.
@@ -924,9 +926,9 @@ $|\Delta\mathrm{AIC}| > 2$ & 89.6\% & 86--93\% & 24.9\% & 100\% \\
 $\boldsymbol{|\Delta\mathrm{AIC}| > 4}$ & 39.8\% & 33--45\% & \textbf{4.0\%} & \textbf{100\%} \\
 $|\Delta\mathrm{AIC}| > 10$ & 37.0\% & 32--44\% & 4.5\% & 97.7\% \\
 $|\Delta\mathrm{AIC}| > 20$ & 34.9\% & 29--41\% & 4.7\% & 95.9\% \\
-Negative binomial only & 79.6\% & 75--85\% & --- & 100.0\% \\
-Negative binomial, $|\Delta\mathrm{AIC}| > 10$ & 20.0\% & 14--25\% & --- & 74.7\% \\
-All 144 combinations must agree & 0.0\% & --- & --- & 8.1\% \\
+Negative binomial only & 79.6\% & 75--85\% & n/a & 100.0\% \\
+Negative binomial, $|\Delta\mathrm{AIC}| > 10$ & 20.0\% & 14--25\% & n/a & 74.7\% \\
+All 144 combinations must agree & 0.0\% & n/a & n/a & 8.1\% \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -953,7 +955,7 @@ following it.
 
 Two alternatives fare worse. Requiring unanimity across the factorial is perfectly
 stable and speaks for one outbreak in twelve. Fixing the observation model alone
---- the single largest lever --- still leaves 80\% of outbreaks with some
+ (the single largest lever) still leaves 80\% of outbreaks with some
 disagreement, because the remaining choices continue to move the verdict.
 Combining the two does better: restricting to the negative binomial and requiring
 $|\Delta\mathrm{AIC}| > 10$ leaves 20\%, and speaks for three outbreaks in
@@ -963,8 +965,7 @@ four.
 \centering
 \includegraphics[width=\textwidth]{13_stability_remedy.png}
 \caption{Left: the effect of an evidence margin on both scales, with the share of
-outbreaks still receiving a verdict. The share where some pair disagrees (dark)
-and the probability that two analyses disagree (green) both collapse between 2 and
+outbreaks still receiving a verdict. The share where some pair disagrees (dark), and the probability that two analyses disagree (green) both collapse between 2 and
 4, but to very different levels, and only the second is comparable with the
 smaller designs. Right: instability by quartile of reported cases.}
 \end{figure}
@@ -996,7 +997,7 @@ dispersion, and ran the full factorial on them. Eighty windows, two truths, all
 The two truths are matched on mean transmission. Switching the climate
 coefficients on multiplies $\beta(t)$ by a factor whose average is not one, so an
 unadjusted alternative would differ from the null in overall transmission
-intensity as well as in whether transmission varies --- and in an earlier version
+intensity as well as in whether transmission varies, and in an earlier version
 of this analysis the raised $R_0$ made the generating integration diverge for 21
 of 59 windows, so power was estimated only where a strong effect happened not to
 break the model. Rescaling $\beta_0$ by the mean of the climate multiplier
@@ -1005,7 +1006,7 @@ windows.
 
 \begin{table}[htbp]
 \centering
-\caption{False positives (data generated with no climate effect) and power (data
+\caption{False positives (data generated with no climate effect), and power (data
 generated with an effect of realistic size). Separation is power minus
 false-positive rate: how far the rule distinguishes the two truths, as opposed to
 how often it says yes.}
@@ -1036,7 +1037,7 @@ Nothing else examined here approaches that.
 
 \textbf{The margin is a specificity dial, not an improvement.} On the negative
 binomial it trades power against false positives along the same curve rather than
-shifting the curve outward --- separation is 54.7 at margin 0 and 55.6 at margin
+shifting the curve outward, separation is 54.7 at margin 0 and 55.6 at margin
 4, essentially unchanged while false positives fall from 18.7\% to 6.2\%. It is
 the right control when a false positive costs more than a miss, and it is not a
 substitute for the observation model: applied to Poisson counts a margin of 4
@@ -1048,14 +1049,14 @@ in 57.0\%. Pairing the two within outbreak and within every other choice, Poisso
 endorses where the negative binomial does not in \textbf{33.6\%} of real pairs;
 that same discordant cell occurs in \textbf{67.1\%} of simulated pairs when no
 climate effect exists and \textbf{23.3\%} when one does. The cell is diagnostic
---- three times as common under the null --- but the real rate sits nearer the arm
+ (three times as common under the null), but the real rate sits nearer the arm
 that contains an effect than the arm that does not. The earlier draft stated that
 85.7\% of Poisson endorsements would occur on data with no effect, and that most
 of the gap between the observation models was therefore not detection. Neither
 follows: 85.7\% is the false-positive rate under a null truth and not a share of
 endorsements, and a mixture read off these three rates puts the null fraction
 nearer a quarter than a majority. We report the rates and decline the inference,
-for the same reason given below --- the simulated effect size comes from these
+for the same reason given below: the simulated effect size comes from these
 same fits.
 
 \paragraph{The instability is not manufactured by running 144 analyses.} The
@@ -1063,8 +1064,8 @@ arithmetical objection to the headline is that with enough analyses something wi
 always disagree. The simulation answers it, because here the truth is known and
 the factorial is identical in both arms. Measured on the scale that does not grow
 with the design, two analyses of the same simulated outbreak reach opposite
-verdicts \textbf{44.5\%} of the time when no climate effect is present --- close to
-the 50\% ceiling, which is what pure coin-flipping looks like --- and
+verdicts \textbf{44.5\%} of the time when no climate effect is present (close to
+the 50\% ceiling, which is what pure coin-flipping looks like), and
 \textbf{18.6\%} when a real effect of realistic size is. The truth more than
 halves the disagreement, so the design is not generating it out of nothing.
 
@@ -1075,7 +1076,7 @@ instability is not only a symptom of weak evidence; a real signal of ordinary si
 does not survive it either.
 
 \paragraph{The remedy holds under both truths.} Applying the recommended rule to
-the same simulated data --- abstain within $|\Delta\mathrm{AIC}| = 4$ --- reduces
+the same simulated data (abstain within $|\Delta\mathrm{AIC}| = 4$) reduces
 pairwise disagreement from 44.5\% to \textbf{1.8\%} where no climate effect
 exists, and from 18.6\% to \textbf{4.3\%} where one does. It works in both cases
 and works slightly less completely where an effect exists, which is the expected
@@ -1118,8 +1119,8 @@ Simulated, real effect present & 28.6\% & 10.3\% & 61.1\% \\
 Where there is nothing to detect it is the largest of the three at 47\%, which is
 what should happen: with no signal the answer is whatever the convention gives, and
 the convention does not vary by window. Where a real effect is present it collapses
-to 10\%. The real outbreaks read \textbf{15.9\%} --- with the effect arm, four
-times away from the null arm --- and their outbreak and interaction shares land
+to 10\%. The real outbreaks read \textbf{15.9\%} (with the effect arm, four
+times away from the null arm), and their outbreak and interaction shares land
 within five points of that arm on both.
 
 We report this as evidence and not as proof. The simulated effect size is drawn
@@ -1157,7 +1158,7 @@ the truth is set by us.
 
 Counts were simulated from each window's own fitted parameters with the Brière
 temperature exponent set to $1.0$ and the rainfall coefficient to $0.30$, and
-every Brière combination was asked to recover them --- 80 outbreaks, 72
+every Brière combination was asked to recover them, 80 outbreaks, 72
 combinations each, 5{,}760 fits. A conventional analysis reports one estimate and
 $\hat\theta \pm 1.96\,\mathrm{SE}$ from one set of choices. Coverage is computed
 over every cell, so the figure describes what an analyst drawing any defensible
@@ -1181,8 +1182,8 @@ Conventional, one analysis & 82.9\% & \textbf{71.2\%} & \textbf{78.0\%} \\
 
 \textbf{A conventional 95\% interval for the rainfall coefficient contains the
 truth 71\% of the time.} For the temperature exponent it manages 83\%, and for the
-transmission coefficient --- which fixes $R_0$ within a structure, so the two have
-the same coverage --- \textbf{78\%}. All three are below the promise, and the
+transmission coefficient (which fixes $R_0$ within a structure, so the two have
+the same coverage) \textbf{78\%}. All three are below the promise, and the
 shortfall is not a subtlety of the asymptotics: a conventional interval reports the
 square root of the within-analysis variance and behaves as though the
 between-analysis variance were zero, when for the rainfall coefficient the two are
@@ -1273,7 +1274,7 @@ observation models, which is a different requirement for a different quantity.
 to everything above is that it is circular: the counts were simulated from the
 family that is then fitted, and real surveillance is not generated by a
 host--vector SEIR with a Brière response. We therefore repeated it with a
-generator outside the family, and the mis-specification is not arbitrary --- the
+generator outside the family, and the mis-specification is not arbitrary: the
 appendix demonstrates it in these data. Provincial epidemics are sums of district
 epidemics that peak at different times, and a homogeneously mixing model reads the
 broader sum as slower transmission. So counts were generated from \emph{two}
@@ -1302,7 +1303,7 @@ the fitted family. 40 outbreaks, 2{,}700 fits.}
 
 \textbf{The conventional interval degrades to 42\%.} A 95\% interval for the
 rainfall coefficient contains the truth in fewer than half of outbreaks once the
-epidemic is a sum of two rather than one --- a structural feature these data
+epidemic is a sum of two rather than one: a structural feature these data
 demonstrably have.
 
 \textbf{The multiverse interval degrades too, and we report that rather than the
@@ -1318,11 +1319,10 @@ the 97.5\%.
 
 A paper that tells a field its methods are unreliable owes that field its own
 answer, computed its own way. Otherwise the work is a refusal, and worse, invites
-the reading that climate does not drive dengue transmission --- which is not what
+the reading that climate does not drive dengue transmission, which is not what
 any of this shows.
 
-Applying the recommendation of Section~\ref{sec:remedy} to the 221 outbreaks ---
-negative binomial only, abstaining where $|\Delta\mathrm{AIC}| < 4$:
+Applying the recommendation of Section~\ref{sec:remedy} to the 221 outbreaks, negative binomial only, abstaining where $|\Delta\mathrm{AIC}| < 4$:
 
 \begin{table}[htbp]
 \centering
@@ -1365,14 +1365,14 @@ The result is not that climate does not drive dengue transmission. It is that on
 this evidence, analysed this way, the question is answered by the analyst more
 often than by the data. Two defensible analyses of the same outbreak, drawn at
 random, reach opposite conclusions almost a third of the time. The factors that
-are genuinely about dengue --- whether the model represents the mosquito, and what
-the biological parameters are --- matter least of the six.
+are genuinely about dengue (whether the model represents the mosquito, and what
+the biological parameters are) matter least of the six.
 
 The single largest lever is the observation model, which is the choice least
 likely to be discussed in a paper about climate and dengue, because it is not
 about climate or dengue. Its mechanism is not the one usually given. Assuming
-equidispersion in data whose dispersion is a median of six times larger --- and
-more than twenty times in a quarter of outbreaks --- does not make the fitted
+equidispersion in data whose dispersion is a median of six times larger (and
+more than twenty times in a quarter of outbreaks) does not make the fitted
 model chase noise: paired within outbreak, the climate coefficients are the same
 size under both likelihoods, and no larger under Poisson than under a negative
 binomial in more than half of the pairs. What it changes is the exchange rate.
@@ -1383,8 +1383,8 @@ only.
 
 That this matters in practice, and not only in principle, follows from the
 literature's account of its own habits (Section~3). We do not claim Poisson is
-what most of the field does --- more than a third of that sample is the
-defensible reading --- but the choice that raises the endorsement probability
+what most of the field does (more than a third of that sample is the
+defensible reading), but the choice that raises the endorsement probability
 from 0.57 to 0.90 is one a large minority makes, and one that mechanistic fits,
 which the review does not cover, commonly make in the more extreme form of
 ordinary least squares.
@@ -1396,8 +1396,7 @@ strength of marginal climate--dengue associations''~\cite{spatial2026}: the
 station whose climate correlated better with incidence forecast no better than the
 one aligned with the population at risk, the two being ``statistically
 equivalent''.
-That is the same dissociation reported in Section~4.3 from a different lever ---
-in-sample endorsement of climate forcing runs at 68\% and out-of-sample at 35\%
+That is the same dissociation reported in Section~4.3 from a different lever: in-sample endorsement of climate forcing runs at 68\% and out-of-sample at 35\%
 on identical fits. Two studies with no design in common find that in-sample
 climate--dengue association overstates what the data support.
 
@@ -1406,7 +1405,7 @@ for a stricter criterion makes the problem worse: BIC and the likelihood-ratio
 test are less stable than AIC here, not more, because they relocate the boundary
 rather than removing it. What works is abstention over a band centred on zero,
 because in three outbreaks in five all the dissent lies inside it. In the other
-two something dissents confidently and no band reaches it --- but there the
+two something dissents confidently and no band reaches it, but there the
 dissenter is nearly alone, which is why the pairwise disagreement falls to 4\%
 while two outbreaks in five still contain a dissenting cell.
 
@@ -1416,7 +1415,7 @@ Measuring that variation requires refitting under alternative defensible choices
 which costs a factorial and is what this study performed. In its absence,
 abstaining below $|\Delta\mathrm{AIC}| = 4$ reduces pairwise disagreement from
 29.8\% to 4.0\% at no cost in verdicts delivered. This asks nothing new of the
-field --- only that existing guidance on interpreting $\Delta$AIC be applied to a
+field: only that existing guidance on interpreting $\Delta$AIC be applied to a
 class of question where it currently is not.
 
 \paragraph{What we recommend, concretely.} Four things. The first three act on
@@ -1447,8 +1446,8 @@ is not the order in which we thought of them.
 \item \textbf{Refit under a handful of alternatives and report an interval that
       carries the result.} Not the whole factorial: \textbf{eight analyses
       suffice}, and four already reach nominal coverage. Combining them by Rubin's
-      rules --- within-analysis variance plus between-analysis variance, the
-      multiple-imputation decomposition --- turns a 95\% interval that covers 71\%
+      rules (within-analysis variance plus between-analysis variance, the
+      multiple-imputation decomposition) turns a 95\% interval that covers 71\%
       of the time into one that covers 97\%, at 1.5 to 2.2 times the width. Eight
       fits of each model is a few minutes on one processor. This is the only item
       here validated against a known truth rather than argued for, and it is the
@@ -1473,8 +1472,7 @@ the surveillance systems compiled here. The sample is not representative of deng
 globally: 34 of the 88 countries in the weekly subset contribute a usable window.
 Which requirement excludes the rest is worth stating exactly, because an earlier
 version of this paragraph guessed and guessed wrong. Of the 54 excluded countries,
-\textbf{17} have no gap-free run of 30 weeks --- the mechanism the paragraph named
---- while \textbf{37} report continuously enough and are excluded because no wave
+\textbf{17} have no gap-free run of 30 weeks (the mechanism the paragraph named), while \textbf{37} report continuously enough and are excluded because no wave
 in their record is large or sharply peaked enough to fit. The dominant selection
 is on \emph{outbreak size and shape}, not on reporting continuity, and it points
 the opposite way from the concern as written: large single-wave epidemics are the
@@ -1501,7 +1499,7 @@ data would likely do so without being identifiable.
 % ===========================================================================
 
 All analyses are reproducible from \url{https://github.com/amnadilber/dengue-multiverse}, archived at \href{https://doi.org/10.5281/zenodo.21854302}{doi:10.5281/zenodo.21854302}: 38 numbered pipeline
-scripts, 268 tests, and a dated analysis log recording every formulation that
+scripts, 269 tests, and a dated analysis log recording every formulation that
 failed and why, including errors in earlier versions of this analysis that
 produced plausible wrong numbers rather than failing, and which the log records
 rather than conceals. Tests check the paper's quoted numbers against the stored
@@ -1524,14 +1522,14 @@ computational pipeline, and drafting and revising the manuscript. The research
 question, the study design, the choice of which results to pursue and which to
 discard, and the decision to subject the manuscript to repeated adversarial
 review were the author's. The author reviewed and edited the content, verified
-the numerical results against the stored output of the pipeline --- an
+the numerical results against the stored output of the pipeline (an
 automated check that the manuscript's quoted figures match the result tables is
-part of the test suite --- and takes full responsibility for the content of the
+part of the test suite), and takes full responsibility for the content of the
 publication.
 
-A worked case on Pakistani surveillance --- profile likelihoods, the bias
+A worked case on Pakistani surveillance (profile likelihoods, the bias
 induced by spatial aggregation, and a two-patch model fitted to an aggregate
-alone --- is given in Supplementary Section~S6. It is the source of the
+alone) is given in Supplementary Section~S6. It is the source of the
 two-patch generator used in Section~\ref{sec:coverage}.
 
 \begin{thebibliography}{99}

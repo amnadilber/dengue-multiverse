@@ -458,3 +458,33 @@ def test_no_escape_corruption_in_the_latex_sources():
                                 for p in raw.split(frag)[:i + 1])].count("\n") + 1
                 problems.append(f"{path.name}:{line} bare fragment {frag!r}")
     assert not problems, "escape corruption: " + "; ".join(problems)
+
+
+def test_no_line_ends_in_a_lone_backslash():
+    r"""A row break that lost a stroke merges every equation onto one line.
+
+    The model's seven differential equations were written as an `align*` block
+    with `\` ending each row. Three of those became a single `\` -- the same
+    shell-heredoc escaping that mangled `\ref` earlier -- so the rows never
+    broke and the display ran off the page. LaTeX reported no error and no
+    overfull box; the manuscript compiled, and the fault was found by looking
+    at the PDF.
+
+    A line ending in exactly one backslash is `\ ` (an escaped space) at a
+    place where a space does nothing. It is never what anyone meant to write.
+    """
+    problems = []
+    for path in (PAPER, SUPPLEMENT, ROOT / "paper" / "author_summary.tex"):
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+        for n, line in enumerate(text.split("\n"), 1):
+            stripped = line.rstrip()
+            if not stripped.endswith("\\"):
+                continue
+            run = len(stripped) - len(stripped.rstrip("\\"))
+            if run == 1:
+                problems.append(f"{path.name}:{n}: {stripped[-60:]}")
+    assert not problems, (
+        "line ending in a lone backslash (a row break that lost a stroke): "
+        + "; ".join(problems))
