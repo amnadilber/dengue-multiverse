@@ -1,0 +1,8 @@
+source,n_windows,outbreak,analysis,interaction,check
+"simulated, no climate effect",80,0.1087,0.47,0.4212,1.0
+"simulated, real effect",75,0.286,0.1034,0.6105,1.0
+real outbreaks,221,0.2354,0.159,0.6056,1.0
+"R0, constant model, raw",221,0.728,0.0511,0.2208,1.0
+"R0, constant model, log scale",221,0.7163,0.0533,0.2304,1.0
+"R0, climate model, raw",221,0.021,0.0048,0.9742,1.0
+"R0, climate model, log scale",219,0.2247,0.0839,0.6914,1.0

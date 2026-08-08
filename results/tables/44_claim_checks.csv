@@ -1,0 +1,9 @@
+claim,value
+P(disagree | same outbreak),0.2977
+P(disagree | same analysis),0.3274
+P(disagree | neither shared),0.3893
+"Poisson-only, no_effect",0.6707
+"Poisson-only, climate",0.2329
+"Poisson-only, real",0.3364
+"pairwise disagreement, as_run",0.3343
+"pairwise disagreement, thorough",0.3295

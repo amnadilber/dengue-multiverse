@@ -1,0 +1,7 @@
+design,n_combos,outbreaks,outbreak,analysis,interaction,check,term,point,lo,hi
+13_global_robustness.csv,24.0,236.0,0.21714945074871814,0.1959203880797372,0.5869301611715447,1.0,,,,
+20_global_robustness_5factor.csv,48.0,234.0,0.20315146723729427,0.21211839535761493,0.5847301374050909,1.0,,,,
+25_global_robustness_6factor.csv,144.0,221.0,0.23535609266430926,0.15901884777491077,0.6056250595607804,1.0000000000000004,,,,
+six-factor CI,,,,,,,outbreak,0.2354,0.1859,0.2769
+six-factor CI,,,,,,,analysis,0.159,0.1187,0.2287
+six-factor CI,,,,,,,interaction,0.6056,0.5605,0.6384

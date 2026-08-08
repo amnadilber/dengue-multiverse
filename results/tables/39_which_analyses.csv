@@ -1,0 +1,7 @@
+held_fixed,a_rain,a_temp,beta_0
+nothing (a spanning draw),97.5,99.9,99.2
+one observation,97.1,98.9,98.6
+one structure,97.9,99.7,96.5
+one params,97.4,99.7,98.6
+one train_frac,97.0,99.6,99.2
+one rain_lag,88.7,97.7,97.8

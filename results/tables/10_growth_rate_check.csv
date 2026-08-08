@@ -1,0 +1,4 @@
+window,growth_rate,r2,R0_lower,R0_upper,R0_fitted,consistent,attack_rate_fitted,attack_rate_upper
+national_2013,0.09559,0.944,2.912,6.766,1.372,False,0.4882,0.9988
+sindh_2021,0.05337,0.893,2.067,2.908,1.42,False,0.5265,0.9338
+kp_2021,0.03969,0.884,1.794,2.212,1.706,False,0.6937,0.846

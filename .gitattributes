@@ -1,0 +1,11 @@
+# Normalise line endings so the repository does not appear wholly modified when
+# checked out on a different platform. Authored on Windows; CI and most readers
+# will be on Linux.
+* text=auto eol=lf
+
+# Binary — never touched.
+*.png binary
+*.pdf binary
+*.h5 binary
+*.keras binary
+*.ckpt binary

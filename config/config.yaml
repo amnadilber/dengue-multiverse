@@ -1,0 +1,170 @@
+# ---------------------------------------------------------------------------
+# Every setting used anywhere in the pipeline lives here. No script may hard-code
+# a parameter value; this file is the single source of truth and is what makes a
+# reported number traceable to the configuration that produced it.
+# ---------------------------------------------------------------------------
+
+seed: 20260726
+
+data:
+  opendengue:
+    version: "V1.3"
+    url: "https://github.com/OpenDengue/master-repo/raw/main/data/releases/V1.3/Temporal_extract_V1_3.zip"
+    filename: "Temporal_extract_V1_3.zip"
+    csv_name: "Temporal_extract_V1_3.csv"
+  nasa_power:
+    base_url: "https://power.larc.nasa.gov/api/temporal/daily/point"
+    parameters: ["T2M", "T2M_MAX", "T2M_MIN", "PRECTOTCORR", "RH2M"]
+    community: "AG"
+
+# Study windows. Dates are inclusive and refer to the week START date, matching
+# OpenDengue's calendar_start_date field.
+windows:
+  national_2013:
+    label: "Pakistan national, 2013 wave"
+    admin_level: 0
+    region: "PAKISTAN"
+    start: "2012-12-23"
+    end: "2014-06-08"
+    # Population of Pakistan at the 2017 census, interpolated back to 2013.
+    population: 188000000
+    # Representative location for climate forcing. Lahore is the largest reporting
+    # centre in the national series; sensitivity to this choice is tested in
+    # scripts/05_sensitivity.py.
+    climate_point: {name: "Lahore", lat: 31.55, lon: 74.35}
+
+  sindh_2021:
+    label: "Sindh province, 2021 wave"
+    admin_level: 1
+    region: "SINDH"
+    start: "2021-09-19"
+    end: "2022-01-23"
+    population: 47900000
+    climate_point: {name: "Karachi", lat: 24.86, lon: 67.01}
+
+  kp_2021:
+    label: "Khyber Pakhtunkhwa province, 2021 wave"
+    admin_level: 1
+    region: "KHYBER PAKHTUNKHWA"
+    start: "2021-08-29"
+    end: "2021-12-05"
+    population: 35500000
+    climate_point: {name: "Peshawar", lat: 34.01, lon: 71.58}
+
+# ---------------------------------------------------------------------------
+# Model. Values marked "fixed" are taken from the entomological and clinical
+# literature and are NOT estimated, because surveillance of human cases alone
+# cannot identify them. Values marked "estimated" are recovered by the inference.
+# Sources are given in docs/MODEL.md.
+# ---------------------------------------------------------------------------
+model:
+  fixed:
+    gamma_h: 0.2            # human recovery rate, /day  (5-day infectious period)
+    sigma_h: 0.2            # 1 / intrinsic incubation period, /day (5 days)
+    mu_v: 0.1               # mosquito mortality rate, /day (10-day lifespan)
+    vector_host_ratio: 2.0  # baseline mosquitoes per human, scaled by climate
+
+    # The reporting fraction CANNOT be estimated alongside the population.
+    # The state variables are fractions, so population enters the prediction only
+    # when incidence is converted to counts: rho and the population at risk appear
+    # purely as a product, and no data can separate them. Verified numerically —
+    # halving the population while doubling rho changes the prediction by exactly
+    # zero. See docs/MODEL.md.
+    #
+    # The product is therefore attributed to the population, which is where the
+    # larger error lies: the 2013 outbreak was concentrated in a handful of
+    # districts, not spread across 188 million people. rho is fixed from the
+    # under-ascertainment literature instead.
+    rho_fixed: 0.05          # ~1 reported case per 20 infections
+    # Sensitivity to this choice is reported; it rescales the estimated
+    # population at risk exactly proportionally and leaves everything else alone.
+    rho_sensitivity: [0.02, 0.05, 0.10, 0.20]
+
+  # An alternative literature parameter set, used as a factor in the robustness
+  # study. Note this block sits OUTSIDE `fixed:` deliberately — an earlier
+  # version placed it between `fixed:` and the rho keys above, which silently
+  # moved `rho_fixed` into it and broke nine tests.
+  #
+  # Every mechanistic dengue model fixes these from published ranges, and every
+  # such range is wide: human viraemia 4-7 days, intrinsic incubation 4-7 days,
+  # Aedes aegypti adult lifespan 8-15 days in the field, vector-to-host ratio
+  # from below one to above ten. Choosing within those ranges is an analytical
+  # degree of freedom exactly like the rainfall lag, so the study measures it
+  # rather than fixing it silently and calling its own headline a lower bound.
+  #
+  # These values sit at the other end of the same published ranges, not outside
+  # them. Neither set is indefensible; that is the point.
+  fixed_alt:
+    gamma_h: 0.25           # 4-day infectious period
+    sigma_h: 0.167          # 6-day intrinsic incubation period
+    mu_v: 0.071             # 14-day mosquito lifespan
+    vector_host_ratio: 3.0  # three mosquitoes per human
+
+  estimated:
+    # Ranges for multi-start sampling, not hard constraints: the optimiser works
+    # in an unconstrained transformed space and may leave them.
+    beta_0:        {min: 1.0e-3, max: 2.0,   init: 0.3}   # transmission at the thermal optimum
+    # Exponent on the Brière temperature response: 0 means temperature has no
+    # effect, 1 means the literature response applies in full. Making it an
+    # exponent rather than a free log-linear slope is what prevents the model
+    # from inferring that transmission falls as temperature rises.
+    # Sampled log-uniformly, so the lower bound must be strictly positive. The
+    # optimiser searches an unconstrained space and can still drive the exponent
+    # below this, which is how "temperature has no effect" remains reachable.
+    a_temp:        {min: 0.05,   max: 3.0,   init: 1.0}
+    a_rain:        {min: -2.0,   max: 2.0,   init: 0.3}   # lagged rainfall coefficient
+    # Fraction of the census population actually in the transmission catchment.
+    pop_frac:      {min: 1.0e-5, max: 1.0,   init: 0.01}
+    i0_frac:       {min: 1.0e-9, max: 1.0e-4, init: 1.0e-6}  # initial infected fraction
+
+  # Thermal limits for the Brière response, from the Aedes aegypti trait
+  # literature. Fixed rather than estimated: a single season's case counts
+  # cannot locate thermal thresholds, and letting the optimiser move them would
+  # reintroduce exactly the freedom that produced the wrong-signed coefficient.
+  temperature_response:
+    t_min_c: 13.35
+    t_max_c: 40.55
+
+  climate_forcing:
+    # Rainfall affects reported cases only after the full chain of delays:
+    # egg to biting adult (7-10 d), extrinsic incubation in the mosquito
+    # (7-14 d), intrinsic incubation in the person (4-7 d) and reporting
+    # (~7 d) — roughly 4-6 weeks in total. An earlier value of 3 weeks counted
+    # only mosquito development and was contradicted by the data: lagged
+    # cross-correlation gives 6, 5 and 4 weeks for the three windows
+    # (scripts/02_explore_data.py). See docs/MODEL.md.
+    rain_lag_weeks: 5
+    rain_smooth_weeks: 4
+    # Sensitivity to the lag is reported, not assumed negligible.
+    rain_lag_sensitivity: [3, 4, 5, 6, 7]
+    # Temperature is standardised before entering the log-linear forcing term.
+    standardise: true
+
+inference:
+  # Observation model. Poisson was the starting point; the first fits returned a
+  # Pearson dispersion of 164 nationally, meaning the variance is over a hundred
+  # times the mean, so the assumption is untenable and its standard errors are
+  # fiction. The negative binomial adds one parameter and accommodates it.
+  observation: "nb"          # "nb" or "poisson"
+  classical:
+    method: "least_squares"     # Levenberg-Marquardt on the reporting-scale residual
+    n_restarts: 10              # multi-start to reduce sensitivity to the initial guess
+  pinn:
+    layers: [64, 64, 64]
+    activation: "tanh"
+    collocation_points: 400
+    epochs: 40000
+    learning_rate: 3.0e-3
+    lr_decay_steps: 8000
+    lr_decay_rate: 0.7
+    data_weight: 200.0
+    window_days: 28             # sequential time-marching window
+  uncertainty:
+    n_bootstrap: 200            # residual bootstrap for confidence intervals
+
+paths:
+  raw: "data/raw"
+  processed: "data/processed"
+  figures: "results/figures"
+  tables: "results/tables"
+  models: "results/models"

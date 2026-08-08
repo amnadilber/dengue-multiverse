@@ -1,0 +1,4 @@
+n_patches,loglik,aic,n_params,R0,delta_aic,better_fit,brackets_districts,meets_growth_bound,verdict
+1,-91.19,188.37,3.0,1.1417,,,,,
+2,-82.87,179.74,7.0,2.5340;1.7233,,,,,
+test,,,,,-8.63,True,True,True,Heterogeneity accounts for the aggregation bias.

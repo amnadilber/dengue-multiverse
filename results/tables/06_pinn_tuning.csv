@@ -1,0 +1,12 @@
+config,R0,R0_truth,R0_rel_err,pop_frac,pop_frac_truth,a_rain,physics_loss,loglik,seconds,notes
+A_baseline,0.0191,1.7,98.9,0.130404,0.0025,0.468,28.73,-416.1,125.5,as in step 06
+B_dataweight_2000,0.9452,1.7,44.4,0.000485,0.0025,-0.222,60.79,-329.6,128.3,stronger data term
+B_dataweight_20000,1.7024,1.7,0.1,0.000188,0.0025,0.235,82.64,-433.3,127.2,stronger data term
+B_dataweight_200000,0.1864,1.7,89.0,0.000564,0.0025,0.601,84.2,-217.8,126.6,stronger data term
+C_dense_long,1.8854,1.7,10.9,0.98208,0.0025,0.022,13.29,-388.9,499.2,"denser grid, longer run"
+D_two_stage,0.0038,1.7,99.8,0.004612,0.0025,0.781,78.41,-428.8,132.9,15k epochs with parameters frozen
+E_wide,1.5074,1.7,11.3,0.01304,0.0025,0.751,52.23,-396.0,287.2,more capacity
+F_seed1,1.5645,1.7,8.0,0.00138,0.0025,-0.946,78.61,-232.4,340.4,reproducibility of the best weighting
+F_seed2,0.8481,1.7,50.1,0.001115,0.0025,-0.163,85.58,-224.5,135.8,reproducibility of the best weighting
+F_seed3,1.0011,1.7,41.1,0.002377,0.0025,0.242,99.07,-430.3,131.8,reproducibility of the best weighting
+F_seed4,1.9532,1.7,14.9,0.000214,0.0025,0.15,69.51,-245.0,131.8,reproducibility of the best weighting

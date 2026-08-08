@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dengue-pk"
+version = "0.1.0"
+description = "A multiverse analysis of climate-attribution inference in mechanistic dengue models"
+keywords = ["dengue", "multiverse-analysis", "specification-curve",
+            "compartmental-models", "model-selection", "climate-and-health"]
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Amna Dilber"}]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "matplotlib>=3.7",
+    "pyyaml>=6.0",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+pinn = ["tensorflow-cpu>=2.15"]
+dev = ["pytest>=7.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+# The langsmith pytest plugin, autoloaded from this machine's Anaconda
+# environment, initialises before conftest and pins Anaconda's older MSVC
+# runtime (14.29). TensorFlow 2.21 then fails with ERROR_DLL_INIT_FAILED, and
+# the PINN tests skip silently while the suite still reports success. Disabling
+# the plugin resolves it; the project does not use langsmith for anything.
+# Identified by bisecting the autoloaded plugin list — see tests/test_environment.py.
+addopts = "-p no:langsmith_plugin"

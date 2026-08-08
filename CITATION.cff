@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+title: >-
+  How much of the evidence for climate-driven dengue transmission
+  survives the analyst? A multiverse analysis of 221 outbreaks in 33
+  countries
+message: >-
+  If you use this software or its results, please cite it using the
+  metadata below. Update the DOI and preprint fields once a release
+  has been archived on Zenodo and the preprint is posted.
+type: software
+authors:
+  - given-names: Amna
+    family-names: Dilber
+    email: amnadilber.bi@gmail.com
+    affiliation: Independent researcher
+repository-code: "https://github.com/amnadilber/dengue-multiverse"
+abstract: >-
+  A multiverse analysis of climate-attribution inference in mechanistic
+  dengue transmission models. Every usable outbreak in a global
+  surveillance compilation is fitted under a full factorial of six
+  routine analysis choices - the observation model, the functional form
+  of the temperature response, the rainfall lag, the fraction of the
+  series fitted, the compartmental structure, and the values at which
+  the fixed epidemiological parameters are set - giving 144 combinations
+  and 33,152 fits across 221 outbreaks in 33 countries.
+
+  Roughly three-quarters of the variation in whether climate forcing is
+  endorsed lies between analyses of the same outbreak rather than between
+  outbreaks. Partitioned three ways the largest term is neither: 61% is
+  an outbreak-by-analysis interaction, against 16% for the analysis
+  itself, so no standardised convention can reach it and a specification
+  curve, which displays the main effect, cannot show it.
+
+  Conventional 95% confidence intervals cover the truth 71-78% of the
+  time on simulated data whose answer is known, and 42% when the epidemic
+  is a sum of two asynchronous ones. Combining eight analyses by Rubin's
+  rules restores nominal coverage at 1.5-2.2 times the width. Applying
+  the paper's own rule to the real data gives a clear verdict for 137 of
+  221 outbreaks, 86% of which support climate forcing.
+keywords:
+  - dengue
+  - multiverse analysis
+  - specification curve
+  - researcher degrees of freedom
+  - compartmental models
+  - model selection
+  - confidence interval coverage
+  - climate and health
+  - reproducibility
+license: MIT

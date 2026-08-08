@@ -1,0 +1,9 @@
+stage,window,method,R0,R0_truth,pop_frac,pop_frac_truth,a_rain,a_rain_truth,loglik,seconds,forward_solves,a_temp
+synthetic,national_2013_synthetic,classical,1.752,1.7,0.001857,0.0025,0.071,0.1,-160.3,678.1,19973,
+synthetic,national_2013_synthetic,pinn,0.022,1.7,0.099564,0.0025,0.334,0.1,-432.7,126.8,0,
+real,national_2013,classical,1.599,,0.004294,,-0.134,,-311.9,510.5,15016,0.2146
+real,national_2013,pinn,1.083,,0.865451,,0.03,,-309.8,126.3,0,0.0003
+real,sindh_2021,classical,1.025,,0.002569,,0.158,,-100.0,528.3,58804,0.0
+real,sindh_2021,pinn,0.024,,0.655085,,0.469,,-83.8,125.9,0,15.2039
+real,kp_2021,classical,1.669,,0.001268,,-0.066,,-67.2,192.2,27931,0.0
+real,kp_2021,pinn,0.267,,0.723864,,3.231,,-48.1,127.8,0,23.7849

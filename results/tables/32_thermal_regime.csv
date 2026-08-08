@@ -1,0 +1,19 @@
+outcome,outcome_label,predictor,predictor_label,n,rho,p,q
+a_temp_median,estimated temperature exponent,temp_sd,SD of weekly temperature (the published moderator),221,-0.1836,0.0062087637854633575,0.05587887406917022
+a_temp_median,estimated temperature exponent,temp_range,range of weekly temperature,221,-0.2174,0.0011423133855745983,0.02056164094034277
+a_temp_median,estimated temperature exponent,response_range,range of the transmission response,221,-0.0891,0.186927081557637,0.23071688050966146
+a_temp_median,estimated temperature exponent,gradient,mean |slope| of the response (thermal traverse),221,0.1274,0.0585588718983385,0.1054059694170093
+a_temp_median,estimated temperature exponent,near_optimum,share of weeks within 2 C of the optimum,221,-0.1452,0.03096114368956733,0.09500285193473339
+a_temp_median,estimated temperature exponent,temp_mean,mean temperature,221,0.1282,0.05706108880404061,0.1054059694170093
+p_climate,share of analyses endorsing climate forcing,temp_sd,SD of weekly temperature (the published moderator),221,0.1446,0.03166761731157779,0.09500285193473339
+p_climate,share of analyses endorsing climate forcing,temp_range,range of weekly temperature,221,0.1485,0.02725743998793418,0.09500285193473339
+p_climate,share of analyses endorsing climate forcing,response_range,range of the transmission response,221,0.1281,0.057209317956969735,0.1054059694170093
+p_climate,share of analyses endorsing climate forcing,gradient,mean |slope| of the response (thermal traverse),221,0.062,0.35894437108813837,0.38005874585802885
+p_climate,share of analyses endorsing climate forcing,near_optimum,share of weeks within 2 C of the optimum,221,0.088,0.19226406709138455,0.23071688050966146
+p_climate,share of analyses endorsing climate forcing,temp_mean,mean temperature,221,-0.073,0.27965694655078954,0.3146140648696382
+pairwise,disagreement between two analyses,temp_sd,SD of weekly temperature (the published moderator),221,-0.1367,0.04237128399490229,0.1054059694170093
+pairwise,disagreement between two analyses,temp_range,range of weekly temperature,221,-0.1473,0.028595041534065814,0.09500285193473339
+pairwise,disagreement between two analyses,response_range,range of the transmission response,221,-0.0938,0.1646304878319647,0.23071688050966146
+pairwise,disagreement between two analyses,gradient,mean |slope| of the response (thermal traverse),221,-0.0368,0.5866870497465024,0.5866870497465024
+pairwise,disagreement between two analyses,near_optimum,share of weeks within 2 C of the optimum,221,-0.0921,0.17249782138155703,0.23071688050966146
+pairwise,disagreement between two analyses,temp_mean,mean temperature,221,0.1154,0.08698751128140876,0.1423432002786689

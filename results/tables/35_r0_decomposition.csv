@@ -1,0 +1,9 @@
+treatment,model,between,within
+raw,R0_constant,72.8,27.2
+raw,R0_climate,2.1,97.9
+log scale,R0_constant,71.6,28.4
+log scale,R0_climate,19.8,80.2
+"restricted to R0 in [0.5, 20]",R0_constant,72.8,27.2
+"restricted to R0 in [0.5, 20]",R0_climate,17.1,86.3
+restricted to R0 <= 10,R0_constant,72.8,27.2
+restricted to R0 <= 10,R0_climate,21.1,81.4

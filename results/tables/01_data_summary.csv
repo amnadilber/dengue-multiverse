@@ -1,0 +1,4 @@
+window,weeks,total_cases,peak_cases,peak_week,best_temp_lag_wks,temp_corr,best_rain_lag_wks,rain_corr,temp_range_C,attack_rate_per_100k
+national_2013,77,17894,2184,2013-09-08,12,0.648,6,0.576,29.9,9.52
+sindh_2021,19,2123,284,2021-10-31,4,0.719,5,0.552,14.8,4.43
+kp_2021,15,1899,304,2021-10-24,4,0.661,4,0.466,15.0,5.35
