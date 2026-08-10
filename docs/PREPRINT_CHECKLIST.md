@@ -1,152 +1,145 @@
-# medRxiv submission — everything the form asks for, filled in
+# Posting the preprint
 
-Written 2026-08-03. Copy these fields straight into the submission form at
-<https://www.medrxiv.org/submit-a-manuscript>. Screening takes 2–4 days.
+Rewritten 2026-08-09 after medRxiv declined the submission. The earlier version of this
+file asserted that "Independent researcher is accepted; medRxiv does not require an
+institutional address". **That was wrong and was never verified.** It cost four days.
 
 ---
 
-## Before you start
+## What happened, so it is not repeated
 
-- [x] Manuscript PDF — `paper/paper.pdf` (25 pages)
-- [x] Supplement PDF — `paper/supplementary.pdf` (6 pages, S1–S6)
-- [x] Repository public — <https://github.com/amnadilber/dengue-multiverse>
-- [x] Repository URL in the manuscript's data-availability statement
-- [x] AI disclosure section in the manuscript
-- [x] Zenodo DOI — 10.5281/zenodo.21854302, in the manuscript, CITATION.cff and README
+Submitted to medRxiv on 8 Aug 2026 (MEDRXIV/2026/360009). Declined on 9 Aug:
+
+> *"medRxiv requires authors to have an organizational affiliation. It is necessary for
+> submissions to be associated with an organization that provides oversight of research
+> activities so that it can adjudicate any ethical issues/disputes that arise."*
+
+Nothing about the manuscript was at issue. The submission was complete and every
+declaration was accepted. The affiliation was the sole reason.
+
+**Rule learned: verify a venue's eligibility criteria before preparing a submission, not
+after.** The paper was ready four days earlier than it needed to be.
+
+---
+
+## Where it goes instead: MetaArXiv
+
+<https://osf.io/preprints/metaarxiv/>
+
+Verified 2026-08-09 against the Center for Open Science's own announcement: the OSF
+*generalist* server was suspended in August 2025 and will **not** return, but fourteen
+community-run servers remain fully operational, MetaArXiv among them.
+
+**Why this one, and why it may be the better home anyway.** The paper's most novel claim is
+not about dengue. It is that a specification curve displays the analysis main effect and
+averages away the dataset-by-analysis interaction, which here is four times larger. That is
+metascience: research about how research is done. MetaArXiv is run by the Berkeley
+Initiative for Transparency in the Social Sciences and its readership is the multiverse and
+reproducibility community, which is precisely the audience for that claim.
+
+What it costs: epidemiologists will not browse it. That is a real loss, and the answer to it
+is the outreach emails, not the server.
+
+**No institutional affiliation is required** (OSF preprint FAQ: affiliation is optional and
+attaches only through an email domain if you have one). Submissions are moderated before
+posting. A DOI and a persistent URL are assigned on acceptance.
 
 ---
 
 ## Form fields, ready to paste
 
-**Article type:** New Results
-
-**Subject area:** Epidemiology
-*(Second choice if asked: Health Informatics)*
-
 **Title**
 
 ```
-How much of the evidence for climate-driven dengue transmission survives the
-analyst? A multiverse analysis of 221 outbreaks in 33 countries
+How much of the evidence for climate-driven dengue transmission survives the analyst? A multiverse analysis of 221 outbreaks in 33 countries
 ```
 
-**Author**
+**Abstract** — paste from `paper/abstract_for_form.txt` (287 words, ASCII only, no special
+characters that a web form can mangle). Do **not** copy from the PDF; the line breaks come
+with it.
+
+**File** — `paper/paper.pdf` (24 pages).
+Add `paper/supplementary.pdf` as a second file if the form allows supplementary material;
+if it does not, the supplement is on GitHub and Zenodo and the data-availability statement
+points there.
+
+**Contributors**
 
 | Field | Value |
 |---|---|
 | First name | Amna |
 | Last name | Dilber |
 | Email | amnadilber.bi@gmail.com |
-| Institution | Independent researcher |
-| Corresponding author | Yes |
-| ORCID | `0009-0008-5684-4516` |
+| ORCID | 0009-0008-5684-4516 |
+| Affiliation | leave blank, or `Independent researcher` if the field is free text |
 
-> "Independent researcher" is accepted. medRxiv does not require an institutional address,
-> and it does not verify affiliation. Do not invent one.
+**Licence** — `CC-By Attribution 4.0 International`. Matches the code (MIT) and the source
+data (OpenDengue CC BY 4.0). Not CC-0: attribution is the one thing worth keeping.
 
-**Abstract** — paste from `paper/paper.tex` (294 words, under the 300-word cap).
+**Disciplines / subjects** — the form requires at least one top-level discipline.
+
+- Primary: **Social and Behavioral Sciences → Methodology** (or the nearest equivalent
+  offered; MetaArXiv's taxonomy is social-science shaped)
+- Add: **Life Sciences → Epidemiology** and **Physical Sciences and Mathematics →
+  Statistics and Probability** if multiple subjects are permitted
+
+**Author assertions** — these increase the chance a moderator accepts it quickly, and every
+one is true here.
+
+| Assertion | Answer |
+|---|---|
+| Public data available? | **Yes** — `https://github.com/amnadilber/dengue-multiverse` and `https://doi.org/10.5281/zenodo.21854302` |
+| Preregistration? | **No** |
+| Conflicts of interest? | **None** |
+
+**Supplementary / data links**
+
+```
+https://github.com/amnadilber/dengue-multiverse
+https://doi.org/10.5281/zenodo.21854302
+https://opendengue.org
+https://power.larc.nasa.gov
+```
+
+**Conflict of interest statement**
+
+```
+The author declares no competing interests. This research received no funding.
+```
 
 ---
 
-## The declarations — these are what screening actually checks
+## After it is accepted
 
-**Competing interest statement**
+You get a DOI and a persistent OSF URL. Then, in this order:
 
-```
-The author declares no competing interests.
-```
-
-**Funding statement**
-
-```
-This research received no specific grant from any funding agency in the public,
-commercial, or not-for-profit sectors.
-```
-
-**Author declarations / ethics** — this is the field most often filled in wrongly.
-
-```
-All data analysed in this study are publicly available, aggregated, and
-de-identified: weekly reported dengue case counts from OpenDengue v1.3
-(CC BY 4.0) and meteorological reanalysis from NASA POWER (public domain). No
-human subjects were involved, no individual-level data were accessed, and no
-ethical approval or consent was required.
-```
-
-**Data availability statement**
-
-```
-All analysis code, result tables and figures are available at
-https://github.com/amnadilber/dengue-multiverse and archived at
-https://doi.org/10.5281/zenodo.21854302. Raw data are not redistributed;
-download scripts record source URLs and checksums. Case data are from
-OpenDengue v1.3 (CC BY 4.0); climate data from NASA POWER (public domain).
-```
-
-**Clinical trial?** No.
-**Prospective registration?** Not applicable.
+- [ ] Add the DOI to `CITATION.cff` (`preferred-citation`), to `README.md`, and to the CV
+      under **Preprints**:
+      *Dilber, A. (2026). How much of the evidence for climate-driven dengue transmission
+      survives the analyst? MetaArXiv. https://doi.org/…*
+- [ ] Send the outreach emails in `OUTREACH_EMAILS.md`. Every one now carries two asks:
+      a criticism, and — where the recipient publishes on arXiv — an **endorsement** for
+      q-bio.PE or stat.AP.
+- [ ] Only then approach a journal (`SUBMISSION.md`).
 
 ---
 
-## Zenodo DOI — do this first, it takes ten minutes
+## The affiliation problem, stated plainly
 
-A DOI is a permanent address. The GitHub link can change; a DOI cannot. Journals increasingly
-ask for one, and a reviewer who clicks a dead link stops trusting the rest.
+It has now blocked the work twice: medRxiv declined it, and it is the largest single factor
+against journal acceptance. It is no longer a background weakness. It is the critical path.
 
-1. Go to <https://zenodo.org> → **Log in with GitHub** (use Amna's GitHub account)
-2. Zenodo asks for permission to see your repositories → allow
-3. Go to **Zenodo → your profile → GitHub**
-4. Find `amnadilber/dengue-multiverse` in the list and switch the toggle **ON**
-   *(nothing happens yet — Zenodo now watches for releases)*
-5. Back on GitHub: **Releases → Create a new release**
-   - Tag: `v1.0.0`
-   - Title: `v1.0.0 — preprint submission`
-   - Description:
-     ```
-     Code, result tables and figures accompanying the manuscript submitted as a
-     preprint. 38 numbered pipeline steps, 266 tests, and a dated analysis log.
-     ```
-   - **Publish release**
-6. Within a few minutes Zenodo mints a DOI and shows it on your Zenodo dashboard
-7. Put that DOI in three places:
-   - `CITATION.cff` — add a `doi:` field
-   - the manuscript's data-availability statement
-   - the medRxiv data-availability field above
+Options, with what each actually costs:
 
-**Order matters:** Zenodo DOI → update manuscript → recompile PDF → submit to medRxiv. Doing
-it the other way round means the preprint points at nothing.
+| Route | Cost | Realistic? |
+|---|---|---|
+| **A domain co-author with an affiliation** | one person saying yes | **the real answer** — solves the preprint server, the journal, and the credibility question at once |
+| Former department at University of the Punjab | an email; possibly a visiting/affiliate status | plausible, and the degree is from there |
+| A Pakistani dengue researcher | an email | plausible; dengue is endemic there and the appendix is Pakistani data |
+| Current employer (Synaptrix) | their **written** permission | only with permission. They do not oversee this research, and some employers claim IP over employees' work. Do not list them silently. |
+| Ronin Institute | application windows, attend an event; without a doctorate, a published track record | slow |
+| IGDORE | applications suspended since Aug 2024 | closed |
+| arXiv | an endorser in the category; since Jan 2026 an institutional email no longer qualifies anyone | needs the same person as the co-author route |
 
----
-
-## After the preprint is live
-
-You get a DOI like `10.1101/2026.MM.DD.XXXXXXXX`. Then:
-
-- [ ] Add it to `CITATION.cff` (`preferred-citation`) and to the README
-- [ ] Add "Preprints" to your CV:
-      *Dilber, A. (2026). How much of the evidence for climate-driven dengue
-      transmission survives the analyst? medRxiv. DOI: …*
-- [ ] Email it to two or three authors you cite — Rachel Lowe, Erin Mordecai, the
-      OpenDengue team. Short message: what the paper does, why it bears on their work,
-      an invitation to point out what is wrong. Most will not reply. **One might, and
-      one is what you need** — a domain co-author is the single change that would most
-      raise the chance of journal acceptance.
-- [ ] Only then submit to a journal (see `SUBMISSION.md` for order and costs)
-
-A preprint does **not** block journal submission. PLOS, Elsevier and the Royal Society all
-accept previously preprinted work; the submission form asks you to declare it, and you
-declare it.
-
----
-
-## What screening rejects, so you can avoid it
-
-medRxiv rejects for: incomplete author or affiliation details; missing competing-interest or
-funding statements; material already published elsewhere; content that could pose a public
-health or biosecurity risk; article types that are not research (opinion, review without
-methods and data).
-
-None of these applies here — the manuscript has methods, data and results, and the
-declarations above are complete. The one field that trips people up is the ethics
-declaration, which is why the exact wording is given above rather than left to be written
-under time pressure.
+Every row except the last two comes down to the same thing: **one person who knows the
+field agreeing to look at this.** That is what the emails are for.

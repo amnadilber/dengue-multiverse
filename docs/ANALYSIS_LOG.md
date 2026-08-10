@@ -3066,3 +3066,67 @@ way to resolve it. Now stated in the caption, with the raw-scale figures beside 
 The quotation guard then failed on this very edit — it flagged the scare-quoted word
 "outbreak" in the new caption as an unverified quotation. Which is the test doing exactly
 its job on the first change made after it was written.
+
+---
+
+## 2026-08-09 — medRxiv declined it, and the reason was not the paper
+
+Submitted 8 Aug (MEDRXIV/2026/360009). Declined the next morning:
+
+> "medRxiv requires authors to have an organizational affiliation. It is necessary for
+> submissions to be associated with an organization that provides oversight of research
+> activities so that it can adjudicate any ethical issues/disputes that arise."
+
+Every declaration was accepted. The manuscript was never in question. The submission
+checklist in this repository had asserted — in writing, without a source — that
+"Independent researcher is accepted; medRxiv does not require an institutional address".
+That was invented, and four days were spent on the strength of it.
+
+The lesson is the same one this log keeps recording in different clothes: **a plausible
+claim sitting next to correct ones is not thereby correct.** It applied to the paper's
+explanatory sentences through seven review passes, and it applied here to a claim about a
+submission policy. The fix is the same too — check it against the source rather than
+against how confident it sounds.
+
+### What the PDF check found before any of this
+
+Two faults reached the compiled PDF and had survived thirteen review passes, both found by
+opening the file and looking at it:
+
+* The model's seven differential equations were an `align*` block whose row breaks had lost
+  a stroke: `\` became `\` in three places. The rows never broke, the display ran off the
+  page, and LaTeX reported neither an error nor an overfull box.
+* 138 em dashes in the prose, one every 94 words.
+
+Neither was findable by any test then in the repository. Both now have one:
+`test_no_line_ends_in_a_lone_backslash` and the control-character sweep, the second
+verified by reintroducing the original corruption and confirming the failure.
+
+Also set the manuscript in a Times-like face. Computer Modern is the LaTeX default and
+universal in mathematics; it is rare in epidemiology, which is the readership. A typeface
+that reads as "not from this field" is a free signal to give away.
+
+### Where it goes now
+
+MetaArXiv. Verified against the Center for Open Science's own announcement rather than
+assumed: the OSF generalist server was suspended in August 2025 and will not return, but
+fourteen community-run servers remain operational and MetaArXiv is one. No institutional
+affiliation is required.
+
+It may be the better home regardless. The paper's most novel claim is not about dengue: it
+is that a specification curve shows the analysis main effect and averages away the
+dataset-by-analysis interaction, which here is four times larger. That is metascience, and
+MetaArXiv's readership is the multiverse and reproducibility community.
+
+The cost is that epidemiologists will not browse it, and the answer to that is the outreach
+emails rather than the server.
+
+### The affiliation problem is now the critical path
+
+It has blocked the work twice: it ended the medRxiv submission, and it is the largest single
+factor against journal acceptance. Every route out of it — a co-author, a former department,
+a Pakistani dengue researcher, an arXiv endorser — reduces to the same requirement: **one
+person who knows the field agreeing to look at this.**
+
+No further review pass changes that, which is worth stating plainly in a log that has
+recorded thirteen of them.
