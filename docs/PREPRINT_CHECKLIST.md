@@ -6,6 +6,21 @@ institutional address". **That was wrong and was never verified.** It cost four 
 
 ---
 
+## Update 2026-08-12: MetaArXiv also declined it
+
+Moderator feedback, in full: *"Outside of the scope of this preprint series."* A
+dengue-titled manuscript on a metascience server was triaged by its title, which in
+retrospect is exactly how a volunteer moderator has to work. The methodological framing
+that made the fit plausible sits in the abstract's third sentence; moderation decisions
+are made on the first.
+
+Two venues, two rejections, neither about the manuscript: one policy (affiliation), one
+scope. The fallback that was written into SUBMISSION.md on day one is now the plan:
+**Zenodo record for the manuscript (no moderation, instant DOI) + direct journal
+submission.** See ZENODO_PREPRINT.md for the paste-ready record.
+
+---
+
 ## What happened, so it is not repeated
 
 Submitted to medRxiv on 8 Aug 2026 (MEDRXIV/2026/360009). Declined on 9 Aug:
@@ -22,7 +37,7 @@ after.** The paper was ready four days earlier than it needed to be.
 
 ---
 
-## Where it goes instead: MetaArXiv
+## Where it went second (declined 12 Aug): MetaArXiv
 
 <https://osf.io/preprints/metaarxiv/>
 

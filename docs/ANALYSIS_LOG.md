@@ -3130,3 +3130,25 @@ person who knows the field agreeing to look at this.**
 
 No further review pass changes that, which is worth stating plainly in a log that has
 recorded thirteen of them.
+
+---
+
+## 2026-08-12 — MetaArXiv declined it too, and the lesson is about titles
+
+Moderator feedback, in full: "Outside of the scope of this preprint series."
+
+The reasoning that sent it there was that the paper's most novel claim is metascientific.
+That reasoning was mine, and it ignored how moderation actually works: a volunteer sees
+"climate-driven dengue transmission... 221 outbreaks" in the title and triages it as
+epidemiology in the first ten seconds. The metascience sits in the abstract's third
+sentence. Nobody doing scope triage reads to the third sentence.
+
+Two venues, two declines, neither about the manuscript: medRxiv on policy (affiliation),
+MetaArXiv on scope (title). Both misjudgements were mine and both were of the same kind
+as the paper's own subject — a plausible belief acted on without checking how the
+decision-maker on the other side actually decides.
+
+The fallback written into SUBMISSION.md on day one now runs: a dedicated Zenodo record
+for the manuscript (no moderation exists there, DOI is immediate) and direct journal
+submission, which never required a preprint in the first place. The citable-DOI purpose
+and the under-review status arrive by separate roads, which is where they always were.
