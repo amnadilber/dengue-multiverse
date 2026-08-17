@@ -54,8 +54,8 @@ Keep it under one page. Do not summarise the paper — the abstract does that.
 > failed and every error found, including those that produced plausible wrong numbers rather
 > than crashing.
 >
-> This manuscript is not under consideration elsewhere. A preprint is posted on medRxiv
-> [DOI]. I have no competing interests and received no funding. I am an independent
+> This manuscript is not under consideration elsewhere. A preprint is available on Zenodo
+> (https://doi.org/10.5281/zenodo.21984527). I have no competing interests and received no funding. I am an independent
 > researcher without institutional affiliation, and I would be glad of reviewers willing to
 > be blunt.
 >

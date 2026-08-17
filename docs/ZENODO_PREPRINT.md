@@ -77,7 +77,14 @@ climate and health
 
 ---
 
-## Publish ke baad — DOI mujhe dena
+## ✅ HO GAYA — 17 Aug 2026
+
+| | DOI |
+|---|---|
+| **Version v1** (citations mein yehi) | `10.5281/zenodo.21984527` |
+| All-versions (hamesha latest par jata hai) | `10.5281/zenodo.21984526` |
+
+## Publish ke baad — DOI mujhe dena (mukammal)
 
 Main phir:
 1. `CITATION.cff` mein `preferred-citation` add karungi

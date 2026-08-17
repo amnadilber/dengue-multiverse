@@ -4,7 +4,7 @@ Rewritten 2026-08-09. Every person below was found by searching the published li
 and every affiliation and address was verified against the paper it appears in. Nobody here
 is a guess.
 
-**Send nothing before the preprint has a DOI.** Without a link this is a request for a
+**The preprint is live: https://doi.org/10.5281/zenodo.21984527 (posted 17 Aug 2026).** These are ready to send. Without a link this is a request for a
 favour; with one it is a researcher showing work.
 
 ---
@@ -72,7 +72,7 @@ He is Pakistani, he has an institutional affiliation, and his 2006–2017 window
 > statistician working on this data would actually consider defensible, or whether I have
 > included one nobody would make and missed one everybody does.
 >
-> Preprint: [DOI]
+> Preprint: https://doi.org/10.5281/zenodo.21984527
 > Code and result tables: github.com/amnadilber/dengue-multiverse
 >
 > Any objection, however short, would be useful.
@@ -112,7 +112,7 @@ Lahore study is the same season as two of the provincial windows in the appendix
 > and because it has already cost me a preprint server. What I have is the full pipeline,
 > 267 tests, and a log of every formulation that failed.
 >
-> Preprint: [DOI]
+> Preprint: https://doi.org/10.5281/zenodo.21984527
 > Code: github.com/amnadilber/dengue-multiverse
 >
 > If any of it is useful to your group I would be glad to hear.
@@ -148,7 +148,7 @@ Cited as `lowe2021` for drought and extreme rainfall acting at different delays.
 > design treats the lag as a nuisance choice with three levels, which may be too crude to
 > be fair to the mechanism.
 >
-> Preprint: [DOI]. Code: github.com/amnadilber/dengue-multiverse
+> Preprint: https://doi.org/10.5281/zenodo.21984527. Code: github.com/amnadilber/dengue-multiverse
 >
 > Amna Dilber
 > Independent researcher, Pakistan
@@ -174,7 +174,7 @@ Cited as `mordecai` and `mordecai2019` for the *Aedes aegypti* thermal limits.
 > My question is whether the exponent formulation is a defensible way to nest the
 > hypothesis, or whether it distorts the thermal response in a way I have not noticed.
 >
-> Preprint: [DOI]. Code: github.com/amnadilber/dengue-multiverse
+> Preprint: https://doi.org/10.5281/zenodo.21984527. Code: github.com/amnadilber/dengue-multiverse
 >
 > Amna Dilber
 > Independent researcher, Pakistan
@@ -200,7 +200,7 @@ position to write from.
 > If that breakdown is useful, the script producing it is step 36 in the repository and runs
 > on the released extract unmodified.
 >
-> Preprint: [DOI]. Code: github.com/amnadilber/dengue-multiverse
+> Preprint: https://doi.org/10.5281/zenodo.21984527. Code: github.com/amnadilber/dengue-multiverse
 >
 > With thanks for making the compilation available.
 >

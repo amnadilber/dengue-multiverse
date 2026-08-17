@@ -4,9 +4,9 @@ title: >-
   survives the analyst? A multiverse analysis of 221 outbreaks in 33
   countries
 message: >-
-  If you use this software or its results, please cite it using the
-  metadata below. The preprint field will be added once the manuscript
-  is posted to medRxiv.
+  If you use this software or its results, please cite the preprint
+  given under preferred-citation; cite the software DOI when the code
+  itself is what you used.
 type: software
 authors:
   - given-names: Amna
@@ -51,3 +51,17 @@ keywords:
   - climate and health
   - reproducibility
 license: MIT
+preferred-citation:
+  type: article
+  title: >-
+    How much of the evidence for climate-driven dengue transmission
+    survives the analyst? A multiverse analysis of 221 outbreaks in 33
+    countries
+  authors:
+    - given-names: Amna
+      family-names: Dilber
+      orcid: "https://orcid.org/0009-0008-5684-4516"
+  year: 2026
+  doi: 10.5281/zenodo.21984527
+  url: "https://doi.org/10.5281/zenodo.21984527"
+  notes: "Preprint, Zenodo. All-versions DOI: 10.5281/zenodo.21984526"

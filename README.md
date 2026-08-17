@@ -1,5 +1,6 @@
 # How much of the evidence for climate-driven dengue transmission survives the analyst?
 
+[![Preprint](https://img.shields.io/badge/preprint-10.5281%2Fzenodo.21984527-blue.svg)](https://doi.org/10.5281/zenodo.21984527)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21854302.svg)](https://doi.org/10.5281/zenodo.21854302)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tests](https://img.shields.io/badge/tests-268%20passing-brightgreen.svg)](tests/)
@@ -118,7 +119,7 @@ answered is not earned, and that in **38% of outbreaks a single season cannot se
 interval to nominal coverage; four already reach it, and eight are indistinguishable from
 seventy-two. That is a few minutes on one processor, not a factorial.
 
-**Status:** work in progress. Nothing here is peer reviewed. See
+**Status:** posted as a preprint (https://doi.org/10.5281/zenodo.21984527); not yet peer reviewed. See
 [`docs/SUBMISSION.md`](docs/SUBMISSION.md) for where it is going and in what order.
 
 ---
@@ -602,14 +603,18 @@ Code: MIT (see `LICENSE`). Data retains the licence of its original source.
 
 ## Citing this
 
-If you use the code or its results, cite the archived release:
+**The paper** (cite this for the findings):
 
 > Dilber, A. (2026). *How much of the evidence for climate-driven dengue transmission
-> survives the analyst? A multiverse analysis of 221 outbreaks in 33 countries* (v1.0.0)
-> [Software]. Zenodo. https://doi.org/10.5281/zenodo.21854302
+> survives the analyst? A multiverse analysis of 221 outbreaks in 33 countries.*
+> Preprint, Zenodo. https://doi.org/10.5281/zenodo.21984527
 
-Machine-readable metadata is in `CITATION.cff`. A preprint DOI will be added here once the
-manuscript is posted to medRxiv.
+**The code** (cite this if you used the pipeline itself):
+
+> Dilber, A. (2026). dengue-multiverse (v1.1.0) [Software]. Zenodo.
+> https://doi.org/10.5281/zenodo.21854302
+
+Machine-readable metadata is in `CITATION.cff`.
 
 ## Author
 
