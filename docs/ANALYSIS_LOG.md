@@ -3152,3 +3152,22 @@ The fallback written into SUBMISSION.md on day one now runs: a dedicated Zenodo 
 for the manuscript (no moderation exists there, DOI is immediate) and direct journal
 submission, which never required a preprint in the first place. The citable-DOI purpose
 and the under-review status arrive by separate roads, which is where they always were.
+
+---
+
+## 2026-08-18 — Epidemics is not free any more, and the questionnaire said so
+
+Midway through the Editorial Manager questionnaire: "This journal is an Open Access
+Journal with no subscription charges... A fee is payable." APC USD 2,860; Pakistan's
+Research4Life status yields a discount, not a waiver. The submission plan's premise —
+"free under the subscription route", written three weeks ago — was stale; the journal
+had flipped to full OA.
+
+Third time the same class of error: a venue's terms asserted from memory or an old
+note rather than read from the venue on the day. medRxiv (affiliation), MetaArXiv
+(scope), Epidemics (fee). Each cost hours; none touched the manuscript.
+
+The submission was abandoned at the fee-confirmation question rather than confirmed
+falsely. Redirecting to PLOS Global Public Health, whose fee policy for Research4Life
+Group B authors and whose Publication Fee Assistance programme will be read on PLOS's
+own pages before a single field is filled.

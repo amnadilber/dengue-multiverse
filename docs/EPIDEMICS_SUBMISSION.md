@@ -143,3 +143,27 @@ Zenodo. https://doi.org/10.5281/zenodo.21984527
 ```
 
 Journal submit hone ke baad us mein jor do: `(under review at Epidemics)`.
+
+---
+
+## SUPERSEDED — 2026-08-18
+
+The submission questionnaire itself disclosed what this file had wrong: **Epidemics is
+now a fully open access journal.** There is no subscription route. The APC is **USD
+2,860**; Elsevier applies automatic Research4Life discounts, but Pakistan is a Group B
+country (discount, not waiver), leaving roughly USD 1,430 — not payable here, and the
+form requires the author to confirm payment upon acceptance, which would be false.
+
+The submission was abandoned at the Additional Information step. Nothing false was
+confirmed. The draft sits in Incomplete Submissions and can be deleted.
+
+This was the third venue whose terms this project asserted without verification
+(medRxiv's affiliation rule, MetaArXiv's scope, now Epidemics' fee model — the note
+"free under the subscription route" was written 2026-07-27 and the journal had
+converted). The files prepared here (cover letter, declaration, highlights) carry over
+to the next venue with minor edits.
+
+**Next venue: PLOS Global Public Health** — topical fit already rated good, PLOS's own
+policy publishes Research4Life Group B authors free, and PLOS Publication Fee
+Assistance can be requested at submission by authors without funds. Both are to be
+verified ON PLOS'S OWN PAGES during package preparation, before anything is filled in.
